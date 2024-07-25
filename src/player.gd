@@ -10,6 +10,9 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var is_attacking = false
 var is_dead = false
 
+var attacks_array = ["attack_1", "attack_2", "attack_3"]
+var current_attack_anim
+
 func _process(_delta):
 	if is_dead:
 		get_tree().reload_current_scene()
@@ -32,7 +35,7 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		
 		if is_attacking:
-			$AnimatedSprite2D.play("attack_1")
+			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
 			$AnimatedSprite2D.play("walk")
 		else:
@@ -45,7 +48,7 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_attacking:
-			$AnimatedSprite2D.play("attack_1")
+			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
 			$AnimatedSprite2D.play("idle")
 		else:
@@ -54,7 +57,8 @@ func _physics_process(delta):
 	# Handle attack.
 	if not is_attacking and Input.is_action_just_pressed("attack"):
 		is_attacking = true
-		$AnimatedSprite2D.play("attack_1")
+		current_attack_anim = attacks_array.pick_random()
+		$AnimatedSprite2D.play(attacks_array.pick_random())
 			
 	move_and_slide()
 
