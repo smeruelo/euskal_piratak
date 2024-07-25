@@ -3,11 +3,10 @@
 [ext_resource type="Script" path="res://Camera2D.gd" id="1_pod0f"]
 [ext_resource type="PackedScene" uid="uid://dnwhia8dkbn15" path="res://scenes/background.tscn" id="2_qkedw"]
 
-[node name="Camera" type="Camera2D" node_paths=PackedStringArray("_subject")]
+[node name="Camera" type="Camera2D"]
 position = Vector2(401, 302)
 offset = Vector2(100, 0)
 script = ExtResource("1_pod0f")
-_subject = NodePath("")
 
 [node name="Background" parent="." instance=ExtResource("2_qkedw")]
 position = Vector2(-401, -304)
