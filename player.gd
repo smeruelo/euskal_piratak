@@ -63,3 +63,6 @@ func _input(event):
 		
 	if event.is_action_pressed("ui_text_backspace"):
 		get_tree().reload_current_scene()
+
+func _on_visible_on_screen_notifier_2d_screen_exited():
+	get_tree().reload_current_scene()
