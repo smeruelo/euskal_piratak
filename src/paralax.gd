@@ -1,7 +1,7 @@
 extends Node2D
 
-@export var scroll_speed : float = -100
-@export var width : float = 400
+@export var scroll_speed : float = -90
+@export var width : float = 899
 @onready var _big_cloud_1 : Sprite2D = $BigCloud1
 @onready var _big_cloud_2 : Sprite2D = $BigCloud2
 @onready var _small_cloud_1 : Sprite2D = $SmallCloud1
@@ -17,7 +17,7 @@ func _process(delta):
 
 func _move_cloud(cloud, distance):
 	cloud.position.x += distance
-	if cloud.position.x < width * -1 :
+	if cloud.position.x < width * -0.5 :
 		cloud.position.x += width * 2
 		
 	

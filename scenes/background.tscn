@@ -63,11 +63,11 @@ scale = Vector2(1.5, 1.9)
 texture = ExtResource("7_5wmnh")
 
 [node name="BigCloud1" type="Sprite2D" parent="."]
-position = Vector2(450.83, 314)
-scale = Vector2(2.00969, 1.82)
+position = Vector2(451.33, 314)
+scale = Vector2(2.01192, 1.82)
 texture = ExtResource("8_fjbx8")
 
 [node name="BigCloud2" type="Sprite2D" parent="."]
-position = Vector2(1347, 315)
-scale = Vector2(2.00598, 1.82)
+position = Vector2(1351.83, 314)
+scale = Vector2(2.00969, 1.82)
 texture = ExtResource("8_fjbx8")
