@@ -1,0 +1,11 @@
+[gd_scene load_steps=2 format=3 uid="uid://dnwhia8dkbn15"]
+
+[ext_resource type="Texture2D" uid="uid://uiyw442xmmax" path="res://assets/Palm Tree Island/Sprites/Background/BG Image.png" id="1_x3dsm"]
+
+[node name="Background" type="Node2D"]
+z_index = -10
+
+[node name="Picture" type="Sprite2D" parent="."]
+position = Vector2(52, -2)
+scale = Vector2(2.34896, 4.70313)
+texture = ExtResource("1_x3dsm")
