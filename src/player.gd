@@ -8,6 +8,12 @@ const JUMP_VELOCITY = -400.0
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var is_attacking = false
+var is_dead = false
+
+func _process(_delta):
+	if is_dead:
+		get_tree().reload_current_scene()
+		
 
 func _physics_process(delta):
 	
@@ -53,7 +59,6 @@ func _physics_process(delta):
 	move_and_slide()
 
 func _on_animated_sprite_2d_animation_looped():
-
 	if $AnimatedSprite2D.animation.begins_with("attack"):
 		is_attacking = false
 
@@ -65,4 +70,23 @@ func _input(event):
 		get_tree().reload_current_scene()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	get_tree().reload_current_scene()
+	is_dead = true
+
+func _on_enemy_left_entered(enemy):
+	if is_attacking and $AnimatedSprite2D.flip_h:
+		enemy.die()
+	else:
+		die()
+
+func _on_enemy_right_entered(enemy):
+	if is_attacking and not $AnimatedSprite2D.flip_h:
+		enemy.die()
+	else:
+		die()
+	
+func _on_enemy_top_entered(enemy):
+	die()
+	
+func die():
+	print("died")
+	is_dead = true

@@ -1,0 +1,136 @@
+[gd_scene load_steps=22 format=3 uid="uid://c7p6ed6uvn2xr"]
+
+[ext_resource type="Script" path="res://src/enemy.gd" id="1_y3csa"]
+[ext_resource type="Texture2D" uid="uid://ngqdtf2fdq4w" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_jjvnh"]
+[ext_resource type="Texture2D" uid="uid://dpw5w0gi5c2oa" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="3_n5lpd"]
+[ext_resource type="Texture2D" uid="uid://djnws5xier05x" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="4_4e86t"]
+[ext_resource type="Texture2D" uid="uid://rv1cm2b0jugv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="5_g6tcd"]
+[ext_resource type="Texture2D" uid="uid://dj4rdxufm0jwv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="6_k4bxa"]
+[ext_resource type="Texture2D" uid="uid://c281dnx1q8e12" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="7_6cemq"]
+[ext_resource type="Texture2D" uid="uid://qx5hc1eqckwp" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="8_b6sqf"]
+[ext_resource type="Texture2D" uid="uid://b66fw4h20tawd" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="9_loe2n"]
+[ext_resource type="Texture2D" uid="uid://b27ea7cqow7dh" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="10_7urg3"]
+[ext_resource type="Texture2D" uid="uid://ndjx1iu6gg7x" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="11_yxngt"]
+[ext_resource type="Texture2D" uid="uid://ciermb5tmmymb" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="12_s0bvo"]
+[ext_resource type="Texture2D" uid="uid://b4o8y76l8a2nn" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="13_n27xr"]
+[ext_resource type="Texture2D" uid="uid://bh30p3m6lwc0d" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="14_lj2dm"]
+[ext_resource type="Texture2D" uid="uid://ci27bqmwrqoc3" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="15_egd3d"]
+[ext_resource type="Texture2D" uid="uid://cgqfa1hnfgst6" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="16_h5c7e"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roe0c"]
+size = Vector2(40, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf67s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jjvnh")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_n5lpd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_4e86t")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_g6tcd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_k4bxa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_6cemq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_b6sqf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_loe2n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_7urg3")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_yxngt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_s0bvo")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_n27xr")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_lj2dm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_egd3d")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_h5c7e")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbjux"]
+size = Vector2(42, 14)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gfxl"]
+size = Vector2(21, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70h5q"]
+size = Vector2(23, 13)
+
+[node name="enemy" type="CharacterBody2D"]
+collision_layer = 4
+collision_mask = 5
+script = ExtResource("1_y3csa")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_roe0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kf67s")
+animation = &"run"
+frame = 5
+frame_progress = 0.000376238
+
+[node name="stateTimer" type="Timer" parent="."]
+
+[node name="AreaTop" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTop"]
+position = Vector2(1, -7)
+shape = SubResource("RectangleShape2D_fbjux")
+debug_color = Color(0.961207, 0.0551463, 0.478632, 0.42)
+
+[node name="AreaLeft" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
+position = Vector2(-10.5, 6.5)
+shape = SubResource("RectangleShape2D_6gfxl")
+debug_color = Color(0.345791, 0.619631, 0.0702144, 0.42)
+
+[node name="AreaRight" type="Area2D" parent="."]
+collision_layer = 4
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2(11.5, 6.5)
+shape = SubResource("RectangleShape2D_70h5q")
+debug_color = Color(0.357536, 0.492312, 0.969324, 0.42)
+
+[connection signal="body_entered" from="AreaTop" to="." method="_on_area_top_body_entered"]
+[connection signal="body_entered" from="AreaLeft" to="." method="_on_area_left_body_entered"]
+[connection signal="body_entered" from="AreaRight" to="." method="_on_area_right_body_entered"]

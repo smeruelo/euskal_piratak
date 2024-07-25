@@ -1,6 +1,5 @@
 extends CharacterBody2D
 
-
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 
@@ -10,6 +9,10 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 enum {IDLE, LEFT, RIGHT, JUMP}
 var state = IDLE
 @export var stateDuration = 1.0
+
+signal top_entered(enemy)
+signal left_entered(enemy)
+signal right_entered(enemy)
 
 func _ready():
 	$AnimatedSprite2D.play()
@@ -25,7 +28,7 @@ func _on_state_timer_timeout():
 		LEFT:
 			state = IDLE
 
-func _process(delta):
+func _process(_delta):
 	match state:
 		IDLE:
 			$AnimatedSprite2D.animation = "idle"
@@ -46,3 +49,19 @@ func _physics_process(delta):
 			velocity.x = -SPEED
 
 	move_and_slide()
+
+
+func _on_area_top_body_entered(body):
+	print("area top")
+	top_entered.emit(self)
+
+func _on_area_left_body_entered(body):
+	print("area left")
+	left_entered.emit(self)
+
+func _on_area_right_body_entered(body):
+	print("area right")
+	right_entered.emit(self)
+
+func die():
+	print("enemy died")
