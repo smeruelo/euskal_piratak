@@ -1,12 +1,12 @@
-[gd_scene load_steps=5 format=3 uid="uid://dgnedt02icxf2"]
+[gd_scene load_steps=5 format=3 uid="uid://bkmxl6exnaivx"]
 
-[ext_resource type="Texture2D" uid="uid://cjqtc8tnhh6tw" path="res://assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_ggbg1"]
+[ext_resource type="Texture2D" uid="uid://cjqtc8tnhh6tw" path="res://assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="1_r48qd"]
 
 [sub_resource type="TileMapPattern" id="TileMapPattern_xtyw4"]
 tile_data = PackedInt32Array(0, 0, 4, 1, 65536, 4, 2, 65536, 4, 3, 131072, 4)
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_pinf3"]
-texture = ExtResource("1_ggbg1")
+texture = ExtResource("1_r48qd")
 texture_region_size = Vector2i(32, 32)
 0:0/0 = 0
 0:0/0/terrain_set = 0
