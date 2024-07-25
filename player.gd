@@ -26,7 +26,7 @@ func _physics_process(delta):
 		velocity.x = direction * SPEED
 		
 		if is_attacking:
-			$AnimatedSprite2D.play("attack")
+			$AnimatedSprite2D.play("attack_1")
 		elif is_on_floor():
 			$AnimatedSprite2D.play("walk")
 		else:
@@ -39,20 +39,20 @@ func _physics_process(delta):
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		if is_attacking:
-			$AnimatedSprite2D.play("attack")
+			$AnimatedSprite2D.play("attack_1")
 		elif is_on_floor():
 			$AnimatedSprite2D.play("idle")
 		else:
 			$AnimatedSprite2D.play("jump")
 	
 	# Handle attack.
-	if Input.is_action_just_pressed("attack"):
+	if not is_attacking and Input.is_action_just_pressed("attack"):
 		is_attacking = true
-		$AnimatedSprite2D.play("attack")
+		$AnimatedSprite2D.play("attack_1")
 			
 	move_and_slide()
 
 func _on_animated_sprite_2d_animation_looped():
 
-	if $AnimatedSprite2D.animation == "attack":
+	if $AnimatedSprite2D.animation.begins_with("attack"):
 		is_attacking = false

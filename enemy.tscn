@@ -1,0 +1,94 @@
+[gd_scene load_steps=19 format=3 uid="uid://c7p6ed6uvn2xr"]
+
+[ext_resource type="Script" path="res://enemy.gd" id="1_iyg4p"]
+[ext_resource type="Texture2D" uid="uid://ngqdtf2fdq4w" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_cda7p"]
+[ext_resource type="Texture2D" uid="uid://dpw5w0gi5c2oa" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="3_b5y38"]
+[ext_resource type="Texture2D" uid="uid://djnws5xier05x" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="4_0btth"]
+[ext_resource type="Texture2D" uid="uid://rv1cm2b0jugv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="5_8452f"]
+[ext_resource type="Texture2D" uid="uid://dj4rdxufm0jwv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="6_u0r7h"]
+[ext_resource type="Texture2D" uid="uid://c281dnx1q8e12" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="7_q0qhx"]
+[ext_resource type="Texture2D" uid="uid://qx5hc1eqckwp" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="8_yqi44"]
+[ext_resource type="Texture2D" uid="uid://b66fw4h20tawd" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="9_13ck3"]
+[ext_resource type="Texture2D" uid="uid://b27ea7cqow7dh" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="10_qwxic"]
+[ext_resource type="Texture2D" uid="uid://ndjx1iu6gg7x" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="11_3vsbq"]
+[ext_resource type="Texture2D" uid="uid://ciermb5tmmymb" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="12_d3x57"]
+[ext_resource type="Texture2D" uid="uid://b4o8y76l8a2nn" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="13_6bj1r"]
+[ext_resource type="Texture2D" uid="uid://bh30p3m6lwc0d" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="14_4bx53"]
+[ext_resource type="Texture2D" uid="uid://ci27bqmwrqoc3" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="15_np0gs"]
+[ext_resource type="Texture2D" uid="uid://cgqfa1hnfgst6" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="16_7v46c"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_roe0c"]
+size = Vector2(40, 26)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_kf67s"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cda7p")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_b5y38")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_0btth")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_8452f")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_u0r7h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_q0qhx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_yqi44")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_13ck3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_qwxic")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("11_3vsbq")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_d3x57")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_6bj1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_4bx53")
+}, {
+"duration": 1.0,
+"texture": ExtResource("15_np0gs")
+}, {
+"duration": 1.0,
+"texture": ExtResource("16_7v46c")
+}],
+"loop": true,
+"name": &"run",
+"speed": 5.0
+}]
+
+[node name="enemy" type="CharacterBody2D"]
+script = ExtResource("1_iyg4p")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 0)
+shape = SubResource("RectangleShape2D_roe0c")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_kf67s")
+animation = &"run"
+frame = 5
+frame_progress = 0.000376238
+
+[node name="stateTimer" type="Timer" parent="."]
