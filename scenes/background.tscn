@@ -39,4 +39,4 @@ texture = ExtResource("1_o10v1")
 position = Vector2(-12.7716, 29.1295)
 sprite_frames = SubResource("SpriteFrames_fphp4")
 autoplay = "default"
-frame_progress = 0.384057
+frame_progress = 0.101139
