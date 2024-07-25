@@ -1,11 +1,42 @@
-[gd_scene load_steps=2 format=3 uid="uid://dnwhia8dkbn15"]
+[gd_scene load_steps=7 format=3 uid="uid://dnwhia8dkbn15"]
 
-[ext_resource type="Texture2D" uid="uid://uiyw442xmmax" path="res://assets/Palm Tree Island/Sprites/Background/BG Image.png" id="1_x3dsm"]
+[ext_resource type="Texture2D" uid="uid://uiyw442xmmax" path="res://assets/Palm Tree Island/Sprites/Background/BG Image.png" id="1_o10v1"]
+[ext_resource type="Texture2D" uid="uid://cuio1rk05el28" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 01.png" id="2_kghn0"]
+[ext_resource type="Texture2D" uid="uid://ciqjmc1snge84" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 02.png" id="3_phh50"]
+[ext_resource type="Texture2D" uid="uid://baotlh5bb800i" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 03.png" id="4_yt0g8"]
+[ext_resource type="Texture2D" uid="uid://bhjq0r127vrr0" path="res://assets/Palm Tree Island/Sprites/Background/Water Reflect Big 04.png" id="5_76ymu"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_fphp4"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_kghn0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_phh50")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_yt0g8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_76ymu")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
 
 [node name="Background" type="Node2D"]
 z_index = -10
+position = Vector2(-1685, -662)
 
 [node name="Picture" type="Sprite2D" parent="."]
-position = Vector2(52, -2)
+position = Vector2(451, 302)
 scale = Vector2(2.34896, 4.70313)
-texture = ExtResource("1_x3dsm")
+texture = ExtResource("1_o10v1")
+
+[node name="Reflections" type="AnimatedSprite2D" parent="Picture"]
+position = Vector2(-12.7716, 29.1295)
+sprite_frames = SubResource("SpriteFrames_fphp4")
+autoplay = "default"
+frame_progress = 0.384057

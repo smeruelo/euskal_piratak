@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://enemy.tscn" id="2_jv66j"]
 [ext_resource type="PackedScene" uid="uid://bkmxl6exnaivx" path="res://scenes/level.tscn" id="4_xvaea"]
 [ext_resource type="Script" path="res://Camera2D.gd" id="5_4tilf"]
-[ext_resource type="Texture2D" uid="uid://uiyw442xmmax" path="res://assets/Palm Tree Island/Sprites/Background/BG Image.png" id="5_b7att"]
+[ext_resource type="PackedScene" uid="uid://dnwhia8dkbn15" path="res://scenes/background.tscn" id="5_qwh3e"]
 
 [node name="main" type="Node2D"]
 
@@ -22,10 +22,5 @@ offset = Vector2(100, 0)
 script = ExtResource("5_4tilf")
 _subject = NodePath("../Player")
 
-[node name="Background" type="Node2D" parent="Camera"]
-z_index = -10
-
-[node name="Picture" type="Sprite2D" parent="Camera/Background"]
-position = Vector2(52, -2)
-scale = Vector2(2.34896, 4.70313)
-texture = ExtResource("5_b7att")
+[node name="Background" parent="Camera" instance=ExtResource("5_qwh3e")]
+position = Vector2(-401, -304)
