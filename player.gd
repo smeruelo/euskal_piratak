@@ -56,3 +56,10 @@ func _on_animated_sprite_2d_animation_looped():
 
 	if $AnimatedSprite2D.animation.begins_with("attack"):
 		is_attacking = false
+
+func _input(event):
+	if event.is_action_pressed("ui_cancel"):
+		get_tree().quit()
+		
+	if event.is_action_pressed("ui_text_backspace"):
+		get_tree().reload_current_scene()
