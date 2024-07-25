@@ -13,7 +13,6 @@ var is_dead = false
 func _process(_delta):
 	if is_dead:
 		get_tree().reload_current_scene()
-		
 
 func _physics_process(delta):
 	
@@ -66,20 +65,21 @@ func _input(event):
 	if event.is_action_pressed("ui_cancel"):
 		get_tree().quit()
 		
-	if event.is_action_pressed("ui_text_backspace"):
+	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
-	is_dead = true
+	print("exited")
+	die()
 
 func _on_enemy_left_entered(enemy):
-	if is_attacking and $AnimatedSprite2D.flip_h:
+	if is_attacking and not $AnimatedSprite2D.flip_h:
 		enemy.die()
 	else:
 		die()
 
 func _on_enemy_right_entered(enemy):
-	if is_attacking and not $AnimatedSprite2D.flip_h:
+	if is_attacking and $AnimatedSprite2D.flip_h:
 		enemy.die()
 	else:
 		die()

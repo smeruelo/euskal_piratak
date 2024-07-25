@@ -6,7 +6,7 @@ const JUMP_VELOCITY = -400.0
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-enum {IDLE, LEFT, RIGHT, JUMP}
+enum {IDLE, LEFT, RIGHT, DEAD}
 var state = IDLE
 @export var stateDuration = 1.0
 
@@ -32,7 +32,7 @@ func _process(_delta):
 	match state:
 		IDLE:
 			$AnimatedSprite2D.animation = "idle"
-		_:
+		LEFT, RIGHT:
 			$AnimatedSprite2D.animation = "run"
 
 func _physics_process(delta):
@@ -41,7 +41,7 @@ func _physics_process(delta):
 		velocity.y += gravity * delta
 
 	match state:
-		IDLE:
+		IDLE, DEAD:
 			velocity.x = 0
 		RIGHT:
 			velocity.x = SPEED
@@ -65,3 +65,12 @@ func _on_area_right_body_entered(body):
 
 func die():
 	print("enemy died")
+	$AreaTop.set_collision_mask_value(2, false)
+	$AreaLeft.set_collision_mask_value(2, false)
+	$AreaRight.set_collision_mask_value(2, false)
+	state = DEAD
+	$stateTimer.stop()
+	$AnimatedSprite2D.animation = "hit"
+	var timer = get_tree().create_timer(2.0)
+	await timer.timeout
+	queue_free()

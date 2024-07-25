@@ -1,18 +1,30 @@
-[gd_scene load_steps=22 format=3 uid="uid://c7p6ed6uvn2xr"]
+[gd_scene load_steps=34 format=3 uid="uid://c7p6ed6uvn2xr"]
 
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_y3csa"]
+[ext_resource type="Texture2D" uid="uid://do6p50tmddyjs" path="res://assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 01.png" id="2_32ut1"]
+[ext_resource type="Texture2D" uid="uid://dk0531uxmtikt" path="res://assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 01.png" id="2_eljbx"]
 [ext_resource type="Texture2D" uid="uid://ngqdtf2fdq4w" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_jjvnh"]
+[ext_resource type="Texture2D" uid="uid://csjr8j0xbkb3a" path="res://assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 02.png" id="3_mevuf"]
+[ext_resource type="Texture2D" uid="uid://cuxpxbcdktvkm" path="res://assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 02.png" id="3_mwaim"]
 [ext_resource type="Texture2D" uid="uid://dpw5w0gi5c2oa" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 02.png" id="3_n5lpd"]
 [ext_resource type="Texture2D" uid="uid://djnws5xier05x" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 03.png" id="4_4e86t"]
+[ext_resource type="Texture2D" uid="uid://c8oiqt74cknjr" path="res://assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 03.png" id="4_7c1fv"]
+[ext_resource type="Texture2D" uid="uid://duphmy3buxmi" path="res://assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 03.png" id="4_hwio3"]
+[ext_resource type="Texture2D" uid="uid://ch8ynvpk68shl" path="res://assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 04.png" id="5_1xt1a"]
+[ext_resource type="Texture2D" uid="uid://typ8fekyienv" path="res://assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 04.png" id="5_06vgk"]
 [ext_resource type="Texture2D" uid="uid://rv1cm2b0jugv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 04.png" id="5_g6tcd"]
 [ext_resource type="Texture2D" uid="uid://dj4rdxufm0jwv" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 05.png" id="6_k4bxa"]
 [ext_resource type="Texture2D" uid="uid://c281dnx1q8e12" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 06.png" id="7_6cemq"]
 [ext_resource type="Texture2D" uid="uid://qx5hc1eqckwp" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 07.png" id="8_b6sqf"]
 [ext_resource type="Texture2D" uid="uid://b66fw4h20tawd" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 08.png" id="9_loe2n"]
 [ext_resource type="Texture2D" uid="uid://b27ea7cqow7dh" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 09.png" id="10_7urg3"]
+[ext_resource type="Texture2D" uid="uid://xk66hbvswhuw" path="res://assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 01.png" id="10_urqwc"]
+[ext_resource type="Texture2D" uid="uid://0xjjvufq6pkn" path="res://assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 02.png" id="11_ejbqm"]
 [ext_resource type="Texture2D" uid="uid://ndjx1iu6gg7x" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 01.png" id="11_yxngt"]
+[ext_resource type="Texture2D" uid="uid://2vc45j3phhdm" path="res://assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 03.png" id="12_cyma7"]
 [ext_resource type="Texture2D" uid="uid://ciermb5tmmymb" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 02.png" id="12_s0bvo"]
 [ext_resource type="Texture2D" uid="uid://b4o8y76l8a2nn" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 03.png" id="13_n27xr"]
+[ext_resource type="Texture2D" uid="uid://cidevop432uul" path="res://assets/The Crusty Crew/Sprites/Crabby/08-Hit/Hit 04.png" id="13_pjul8"]
 [ext_resource type="Texture2D" uid="uid://bh30p3m6lwc0d" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 04.png" id="14_lj2dm"]
 [ext_resource type="Texture2D" uid="uid://ci27bqmwrqoc3" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 05.png" id="15_egd3d"]
 [ext_resource type="Texture2D" uid="uid://cgqfa1hnfgst6" path="res://assets/The Crusty Crew/Sprites/Crabby/02-Run/Run 06.png" id="16_h5c7e"]
@@ -22,6 +34,57 @@ size = Vector2(40, 26)
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_kf67s"]
 animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_eljbx")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mevuf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_7c1fv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_06vgk")
+}],
+"loop": true,
+"name": &"dead_hit",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_32ut1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mwaim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_hwio3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_1xt1a")
+}],
+"loop": true,
+"name": &"die",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("10_urqwc")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_ejbqm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_cyma7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_pjul8")
+}],
+"loop": true,
+"name": &"hit",
+"speed": 5.0
+}, {
 "frames": [{
 "duration": 1.0,
 "texture": ExtResource("2_jjvnh")
@@ -79,13 +142,13 @@ animations = [{
 }]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_fbjux"]
-size = Vector2(42, 14)
+size = Vector2(31, 6)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_6gfxl"]
-size = Vector2(21, 13)
+size = Vector2(21, 21)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_70h5q"]
-size = Vector2(23, 13)
+size = Vector2(23, 21)
 
 [node name="enemy" type="CharacterBody2D"]
 collision_layer = 4
@@ -98,9 +161,7 @@ shape = SubResource("RectangleShape2D_roe0c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kf67s")
-animation = &"run"
-frame = 5
-frame_progress = 0.000376238
+animation = &"dead_hit"
 
 [node name="stateTimer" type="Timer" parent="."]
 
@@ -109,7 +170,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTop"]
-position = Vector2(1, -7)
+position = Vector2(1, -11)
 shape = SubResource("RectangleShape2D_fbjux")
 debug_color = Color(0.961207, 0.0551463, 0.478632, 0.42)
 
@@ -118,7 +179,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
-position = Vector2(-10.5, 6.5)
+position = Vector2(-10.5, 2.5)
 shape = SubResource("RectangleShape2D_6gfxl")
 debug_color = Color(0.345791, 0.619631, 0.0702144, 0.42)
 
@@ -127,7 +188,7 @@ collision_layer = 4
 collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
-position = Vector2(11.5, 6.5)
+position = Vector2(11.5, 2.5)
 shape = SubResource("RectangleShape2D_70h5q")
 debug_color = Color(0.357536, 0.492312, 0.969324, 0.42)
 
