@@ -1,6 +1,5 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwicj13gkptfj"]
+[gd_scene load_steps=5 format=3 uid="uid://dwicj13gkptfj"]
 
-[ext_resource type="PackedScene" uid="uid://d38mwijeoord0" path="res://icon.tscn" id="1_lkels"]
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://player.tscn" id="1_yu70o"]
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://enemy.tscn" id="2_jv66j"]
 [ext_resource type="PackedScene" uid="uid://dgnedt02icxf2" path="res://level.tscn" id="4_xvaea"]
@@ -11,30 +10,12 @@
 [node name="Player" parent="." instance=ExtResource("1_yu70o")]
 position = Vector2(402, 229)
 
-[node name="Icon" parent="." instance=ExtResource("1_lkels")]
-
-[node name="Icon2" parent="." instance=ExtResource("1_lkels")]
-
-[node name="Icon3" parent="." instance=ExtResource("1_lkels")]
-position = Vector2(735, 415)
-
-[node name="Icon4" parent="." instance=ExtResource("1_lkels")]
-position = Vector2(100, 415)
-
-[node name="Icon5" parent="." instance=ExtResource("1_lkels")]
-position = Vector2(225, 415)
-
-[node name="Icon6" parent="." instance=ExtResource("1_lkels")]
-position = Vector2(352, 415)
-
-[node name="Icon7" parent="." instance=ExtResource("1_lkels")]
-position = Vector2(480, 415)
-
 [node name="enemy" parent="." instance=ExtResource("2_jv66j")]
-position = Vector2(246, 229)
+position = Vector2(498, 348)
 
 [node name="Level" parent="." instance=ExtResource("4_xvaea")]
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
+position = Vector2(401, 302)
 script = ExtResource("5_4tilf")
 _subject = NodePath("../Player")

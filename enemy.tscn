@@ -1,4 +1,4 @@
-[gd_scene load_steps=19 format=3 uid="uid://c7p6ed6uvn2xr"]
+[gd_scene load_steps=22 format=3 uid="uid://c7p6ed6uvn2xr"]
 
 [ext_resource type="Script" path="res://enemy.gd" id="1_iyg4p"]
 [ext_resource type="Texture2D" uid="uid://ngqdtf2fdq4w" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_cda7p"]
@@ -78,6 +78,15 @@ animations = [{
 "speed": 5.0
 }]
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_fbjux"]
+size = Vector2(38, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6gfxl"]
+size = Vector2(19, 13)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_70h5q"]
+size = Vector2(21, 13)
+
 [node name="enemy" type="CharacterBody2D"]
 script = ExtResource("1_iyg4p")
 
@@ -92,3 +101,24 @@ frame = 5
 frame_progress = 0.000376238
 
 [node name="stateTimer" type="Timer" parent="."]
+
+[node name="AreaTop" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaTop"]
+position = Vector2(1, -6.5)
+shape = SubResource("RectangleShape2D_fbjux")
+debug_color = Color(0.961207, 0.0551463, 0.478632, 0.42)
+
+[node name="AreaLeft" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaLeft"]
+position = Vector2(-9.5, 6.5)
+shape = SubResource("RectangleShape2D_6gfxl")
+debug_color = Color(0.345791, 0.619631, 0.0702144, 0.42)
+
+[node name="AreaRight" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="AreaRight"]
+position = Vector2(10.5, 6.5)
+shape = SubResource("RectangleShape2D_70h5q")
+debug_color = Color(0.357536, 0.492312, 0.969324, 0.42)
