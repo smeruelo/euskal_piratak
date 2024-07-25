@@ -19,10 +19,9 @@ config/icon="res://icon.svg"
 
 window/size/viewport_width=800
 window/size/viewport_height=600
-window/size/mode=3
 window/size/resizable=false
-window/stretch/mode="viewport"
-window/stretch/aspect="expand"
+window/stretch/mode="canvas_items"
+window/stretch/scale_mode="integer"
 
 [input]
 
