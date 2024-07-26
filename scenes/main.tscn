@@ -1,15 +1,17 @@
-[gd_scene load_steps=8 format=3 uid="uid://dwicj13gkptfj"]
+[gd_scene load_steps=10 format=3 uid="uid://dwicj13gkptfj"]
 
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://scenes/player.tscn" id="1_yu70o"]
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://scenes/enemy.tscn" id="3_ftov6"]
+[ext_resource type="PackedScene" uid="uid://mvebvw37hjw4" path="res://scenes/treasure/green_diamond.tscn" id="4_aylta"]
 [ext_resource type="PackedScene" uid="uid://bkmxl6exnaivx" path="res://scenes/level.tscn" id="4_xvaea"]
 [ext_resource type="Script" path="res://src/Camera2D.gd" id="5_4tilf"]
+[ext_resource type="PackedScene" uid="uid://0hfhsaqhfvk3" path="res://scenes/treasure/red_bottle.tscn" id="5_i1m8k"]
 [ext_resource type="PackedScene" uid="uid://dnwhia8dkbn15" path="res://scenes/background.tscn" id="5_qwh3e"]
 [ext_resource type="PackedScene" uid="uid://bh5uid8opw16o" path="res://scenes/HUD.tscn" id="6_a6pi8"]
 [ext_resource type="PackedScene" uid="uid://dtbpx2vhn1p5h" path="res://scenes/water.tscn" id="7_16cbg"]
 
 [node name="main" type="Node2D"]
-metadata/_edit_horizontal_guides_ = [600.0]
+metadata/_edit_horizontal_guides_ = [600.0, 303.0, 560.0]
 
 [node name="Player" parent="." instance=ExtResource("1_yu70o")]
 position = Vector2(402, 229)
@@ -25,6 +27,14 @@ position = Vector2(1655, 530)
 
 [node name="cangrejo1" parent="LevelIsla" instance=ExtResource("3_ftov6")]
 position = Vector2(616, 532)
+
+[node name="Treasure" type="Node2D" parent="LevelIsla"]
+
+[node name="green_diamond" parent="LevelIsla/Treasure" instance=ExtResource("4_aylta")]
+position = Vector2(925, 277)
+
+[node name="red_bottle" parent="LevelIsla/Treasure" instance=ExtResource("5_i1m8k")]
+position = Vector2(1994, 529)
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
 position = Vector2(401, 302)

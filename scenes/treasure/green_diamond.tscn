@@ -1,0 +1,67 @@
+[gd_scene load_steps=12 format=3 uid="uid://mvebvw37hjw4"]
+
+[ext_resource type="Script" path="res://src/treasure/green_diamond.gd" id="1_7jgsk"]
+[ext_resource type="Texture2D" uid="uid://bfpbdculuky1d" path="res://assets/Pirate Treasure/Sprites/Green Diamond/01.png" id="1_wqta8"]
+[ext_resource type="Texture2D" uid="uid://dwm7bgk5bssnx" path="res://assets/Pirate Treasure/Sprites/Green Diamond/02.png" id="2_8wnp3"]
+[ext_resource type="Texture2D" uid="uid://djb22k38ak24t" path="res://assets/Pirate Treasure/Sprites/Green Diamond/03.png" id="3_8a2m1"]
+[ext_resource type="Texture2D" uid="uid://bxjnls7h3u1sk" path="res://assets/Pirate Treasure/Sprites/Green Diamond/04.png" id="4_g30p6"]
+[ext_resource type="Texture2D" uid="uid://de6j2ns8kbqdt" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/01.png" id="5_r0upw"]
+[ext_resource type="Texture2D" uid="uid://ds5hcosiu3gl7" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/02.png" id="6_rahsa"]
+[ext_resource type="Texture2D" uid="uid://7pxuog07sn2y" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/03.png" id="7_fpcno"]
+[ext_resource type="Texture2D" uid="uid://cor5yyy0nwxca" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/04.png" id="8_flkkj"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huqh2"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gd4o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_wqta8")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_8wnp3")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_8a2m1")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_g30p6")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("5_r0upw")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_rahsa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_fpcno")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_flkkj")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[node name="diamond" type="Area2D"]
+scale = Vector2(1.4, 1.4)
+collision_mask = 2
+script = ExtResource("1_7jgsk")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_huqh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gd4o8")
+animation = &"effect"
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]

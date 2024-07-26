@@ -1,0 +1,79 @@
+[gd_scene load_steps=15 format=3 uid="uid://ddnby5imcb3ql"]
+
+[ext_resource type="Script" path="res://src/treasure/green_diamond.gd" id="1_w73w1"]
+[ext_resource type="Texture2D" uid="uid://bpbee4joqshym" path="res://assets/Pirate Treasure/Sprites/Red Potion/01.png" id="2_20kg2"]
+[ext_resource type="Texture2D" uid="uid://buposimisevnv" path="res://assets/Pirate Treasure/Sprites/Red Potion/02.png" id="3_7cafv"]
+[ext_resource type="Texture2D" uid="uid://c5lh536nb0w6s" path="res://assets/Pirate Treasure/Sprites/Red Potion/03.png" id="4_enw1r"]
+[ext_resource type="Texture2D" uid="uid://claa60mjm0u1n" path="res://assets/Pirate Treasure/Sprites/Red Potion/04.png" id="5_kvs5b"]
+[ext_resource type="Texture2D" uid="uid://de6j2ns8kbqdt" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/01.png" id="6_8055h"]
+[ext_resource type="Texture2D" uid="uid://sj8y5qgmolk2" path="res://assets/Pirate Treasure/Sprites/Red Potion/05.png" id="6_e31dj"]
+[ext_resource type="Texture2D" uid="uid://ds5hcosiu3gl7" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/02.png" id="7_7er7w"]
+[ext_resource type="Texture2D" uid="uid://c78k63w1vq0ov" path="res://assets/Pirate Treasure/Sprites/Red Potion/06.png" id="7_oajmt"]
+[ext_resource type="Texture2D" uid="uid://7pxuog07sn2y" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/03.png" id="8_dxktg"]
+[ext_resource type="Texture2D" uid="uid://c3k24f25h10ii" path="res://assets/Pirate Treasure/Sprites/Red Potion/07.png" id="8_s4xwe"]
+[ext_resource type="Texture2D" uid="uid://cor5yyy0nwxca" path="res://assets/Pirate Treasure/Sprites/Diamond Effect/04.png" id="9_1yy63"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_huqh2"]
+radius = 8.0
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_gd4o8"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_20kg2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7cafv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_enw1r")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_kvs5b")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_e31dj")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_oajmt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_s4xwe")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_8055h")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_7er7w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_dxktg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_1yy63")
+}],
+"loop": false,
+"name": &"effect",
+"speed": 10.0
+}]
+
+[node name="red_bottle" type="Area2D"]
+scale = Vector2(1.4, 1.4)
+collision_mask = 2
+script = ExtResource("1_w73w1")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_huqh2")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_gd4o8")
+animation = &"effect"
+autoplay = "default"
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
+[connection signal="animation_finished" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_finished"]
