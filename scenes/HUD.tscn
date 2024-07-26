@@ -1,15 +1,17 @@
-[gd_scene load_steps=9 format=3 uid="uid://bh5uid8opw16o"]
+[gd_scene load_steps=10 format=3 uid="uid://bh5uid8opw16o"]
 
-[ext_resource type="Texture2D" uid="uid://bdkonpwpdoxnv" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
-[ext_resource type="Texture2D" uid="uid://crx66ki82klwi" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
-[ext_resource type="Texture2D" uid="uid://bnl1q6qstg7hs" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
-[ext_resource type="Texture2D" uid="uid://b6fcu5h7sd62f" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
-[ext_resource type="Texture2D" uid="uid://ijdj6a8j8gry" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
-[ext_resource type="Texture2D" uid="uid://cu3i8hmo5diw7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
-[ext_resource type="Texture2D" uid="uid://s7uyx4o5dqcu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
-[ext_resource type="Texture2D" uid="uid://c6226bfdmsp6x" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
+[ext_resource type="Script" path="res://src/HUD.gd" id="1_ll2b2"]
+[ext_resource type="Texture2D" uid="uid://csbgmhoohclpd" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
+[ext_resource type="Texture2D" uid="uid://34cjvi2q67bx" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
+[ext_resource type="Texture2D" uid="uid://c2wh02r1fkh46" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
+[ext_resource type="Texture2D" uid="uid://dkjtaurawmja6" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
+[ext_resource type="Texture2D" uid="uid://cuf8ds61musnu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
+[ext_resource type="Texture2D" uid="uid://b7ihj2e1nwuru" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
+[ext_resource type="Texture2D" uid="uid://b67bu1wyxfyc7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
+[ext_resource type="Texture2D" uid="uid://y2aw12rf7jae" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
 
 [node name="HUD" type="CanvasLayer"]
+script = ExtResource("1_ll2b2")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 40.0

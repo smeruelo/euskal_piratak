@@ -1,5 +1,6 @@
 extends CharacterBody2D
 
+@onready var hud = get_node("../HUD")
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
@@ -18,9 +19,6 @@ var is_hit = false
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
-var health = 100
-var stamina = 100
-
 func _process(_delta):
 	if is_dead:
 		get_tree().reload_current_scene()
@@ -35,11 +33,10 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
 			velocity.y = JUMP_VELOCITY
-		elif stamina > STAMINA_COST:
+		elif hud.get_stamina() > STAMINA_COST:
 			velocity.y = JUMP_VELOCITY
-			stamina = stamina - STAMINA_COST
-			print("Stamina: ", stamina)
-		
+			hud.increase_stamina(-1 * STAMINA_COST)
+			
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
@@ -133,17 +130,15 @@ func hit():
 	is_hit = true
 	$AnimatedSprite2D.play("hit")
 	
-	var health_bar = get_node("../HUD/health_bar/TextureProgressBar")	
-	var damage = round(BASE_DAMAGE * (randf() + 1))
+	var damage =  -1 * round(BASE_DAMAGE * (randf() + 1))
+	hud.increase_health(damage)
 	
-	health = health - damage
-	print("Player health: %s (-%s)" % [health, damage])
 	$Damage_indicator.visible = true
 	$Damage_indicator.text = str(damage * -1)
 	await get_tree().create_timer(1.0).timeout
 	$Damage_indicator.visible = false
-	health_bar.value = health
-	if health <= 0:
+	
+	if hud.get_health() <= 0:
 		die()
 	
 func die():
@@ -152,18 +147,6 @@ func die():
 
 
 func _on_timer_timeout():
-	# Stamina recovery
-	if stamina < 100:
-		stamina = stamina + STAMINA_RECOVERY
-	else:
-		stamina = 100
-	get_node("../HUD/stamina_bar/TextureProgressBar").value = stamina
-	
-	# Health recovery
-	if health < 100:
-		health = health + HEALTH_RECOVERY
-	else:
-		health = 100
-	get_node("../HUD/health_bar/TextureProgressBar").value = health
-
+	hud.increase_stamina(STAMINA_RECOVERY)
+	hud.increase_health(HEALTH_RECOVERY)
 
