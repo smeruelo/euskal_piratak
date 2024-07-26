@@ -1,0 +1,135 @@
+[gd_scene load_steps=10 format=3 uid="uid://dtbpx2vhn1p5h"]
+
+[ext_resource type="Texture2D" uid="uid://dewj7428w2pdk" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/1.png" id="1_6ipl0"]
+[ext_resource type="Texture2D" uid="uid://ce2lje1lt64m7" path="res://assets/Merchant Ship/Sprites/Water/Water/Bottom/1.png" id="1_expq1"]
+[ext_resource type="Script" path="res://src/water.gd" id="1_wkcdq"]
+[ext_resource type="PackedScene" uid="uid://c0gb0bidjcire" path="res://scenes/water_splash.tscn" id="2_6xnce"]
+[ext_resource type="Texture2D" uid="uid://cdoxu5g5j3fe1" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/2.png" id="2_57tf2"]
+[ext_resource type="Texture2D" uid="uid://cv407ccviam8q" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/3.png" id="3_q7lim"]
+[ext_resource type="Texture2D" uid="uid://doc7p484owbmi" path="res://assets/Merchant Ship/Sprites/Water/Water/Top/4.png" id="4_f11sc"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ro7h2"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_6ipl0")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_57tf2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_q7lim")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_f11sc")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="SegmentShape2D" id="SegmentShape2D_vybef"]
+b = Vector2(192, 0)
+
+[node name="Water" type="Area2D"]
+z_index = 10
+collision_mask = 2
+script = ExtResource("1_wkcdq")
+_splash = ExtResource("2_6xnce")
+
+[node name="bottom" type="Sprite2D" parent="."]
+position = Vector2(576, 40)
+scale = Vector2(12, 1)
+texture = ExtResource("1_expq1")
+
+[node name="Waves" type="Node2D" parent="."]
+
+[node name="Waves1" type="AnimatedSprite2D" parent="Waves"]
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves2" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(96, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves3" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(576, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves4" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(672, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves5" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(768, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves6" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(864, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves7" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(960, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves8" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(1056, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves9" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(384, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves10" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(480, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves11" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(192, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves12" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(288, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("SegmentShape2D_vybef")
+
+[node name="WaterSplash" parent="." instance=ExtResource("2_6xnce")]
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]
