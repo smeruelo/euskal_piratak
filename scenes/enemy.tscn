@@ -161,9 +161,10 @@ shape = SubResource("RectangleShape2D_roe0c")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 sprite_frames = SubResource("SpriteFrames_kf67s")
-animation = &"dead_hit"
+animation = &"run"
 
 [node name="stateTimer" type="Timer" parent="."]
+one_shot = true
 
 [node name="AreaTop" type="Area2D" parent="."]
 collision_layer = 4
@@ -191,6 +192,17 @@ collision_mask = 2
 position = Vector2(11.5, 2.5)
 shape = SubResource("RectangleShape2D_70h5q")
 debug_color = Color(0.357536, 0.492312, 0.969324, 0.42)
+
+[node name="Direction" type="Node2D" parent="."]
+
+[node name="FloorDetection" type="RayCast2D" parent="Direction"]
+target_position = Vector2(0, 20)
+
+[node name="WallDetectionRight" type="RayCast2D" parent="Direction"]
+target_position = Vector2(50, 0)
+
+[node name="WallDetectionLeft" type="RayCast2D" parent="Direction"]
+target_position = Vector2(-50, 0)
 
 [connection signal="body_entered" from="AreaTop" to="." method="_on_area_top_body_entered"]
 [connection signal="body_entered" from="AreaLeft" to="." method="_on_area_left_body_entered"]

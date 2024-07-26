@@ -1,12 +1,12 @@
 extends CharacterBody2D
-
-const SPEED = 300.0
+#@export switch_time = 1
+const SPEED = 90.0
 const JUMP_VELOCITY = -400.0
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-enum {IDLE, LEFT, RIGHT, DEAD}
+enum {IDLE, WALK, DEAD}
 var state = IDLE
 @export var stateDuration = 1.0
 
@@ -22,17 +22,17 @@ func _ready():
 func _on_state_timer_timeout():
 	match state:
 		IDLE:
-			state = RIGHT
-		RIGHT:
-			state = LEFT
-		LEFT:
+			state = WALK
+			$stateTimer.start(stateDuration * 5)
+		WALK:
 			state = IDLE
+			$stateTimer.start(stateDuration)
 
 func _process(_delta):
 	match state:
 		IDLE:
 			$AnimatedSprite2D.animation = "idle"
-		LEFT, RIGHT:
+		WALK:
 			$AnimatedSprite2D.animation = "run"
 
 func _physics_process(delta):
@@ -40,14 +40,15 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 
+	var old = velocity.x
 	match state:
 		IDLE, DEAD:
 			velocity.x = 0
-		RIGHT:
-			velocity.x = SPEED
-		LEFT:
-			velocity.x = -SPEED
-
+		WALK:
+			if not $Direction/FloorDetection.is_colliding() or $Direction/WallDetectionLeft.is_colliding() or $Direction/WallDetectionRight.is_colliding():
+				$Direction.scale.x = -$Direction.scale.x
+			velocity.x = SPEED * $Direction.scale.x
+				
 	move_and_slide()
 
 
