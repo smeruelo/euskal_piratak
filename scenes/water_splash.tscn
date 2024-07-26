@@ -31,8 +31,9 @@ animations = [{
 }]
 
 [node name="WaterSplash" type="AnimatedSprite2D"]
+scale = Vector2(4, 1.5)
 sprite_frames = SubResource("SpriteFrames_85314")
-offset = Vector2(0, -15)
+offset = Vector2(0, -10)
 script = ExtResource("6_r5lk4")
 
 [connection signal="animation_finished" from="." to="." method="_on_animation_finished"]
