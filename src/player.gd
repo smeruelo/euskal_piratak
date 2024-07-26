@@ -9,6 +9,7 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var is_attacking = false
 var is_dead = false
+var is_hit = false
 
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
@@ -35,7 +36,9 @@ func _physics_process(delta):
 	if direction:
 		velocity.x = direction * SPEED
 		
-		if is_attacking:
+		if is_hit:
+			$AnimatedSprite2D.play("hit")
+		elif is_attacking:
 			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
 			$AnimatedSprite2D.play("walk")
@@ -48,7 +51,9 @@ func _physics_process(delta):
 			$AnimatedSprite2D.flip_h = false
 	else:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
-		if is_attacking:
+		if is_hit:
+			$AnimatedSprite2D.play("hit")
+		elif is_attacking:
 			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
 			$AnimatedSprite2D.play("idle")
@@ -66,6 +71,8 @@ func _physics_process(delta):
 func _on_animated_sprite_2d_animation_looped():
 	if $AnimatedSprite2D.animation.begins_with("attack"):
 		is_attacking = false
+	if $AnimatedSprite2D.animation.begins_with("hit"):
+		is_hit = false
 
 func _input(event):
 	if event.is_action_pressed("ui_cancel"):
@@ -94,6 +101,11 @@ func _on_enemy_top_entered(enemy):
 	hit()
 
 func hit():
+	# Wait for the animation to finish before being hit again
+	if is_hit: 
+		return
+		
+	is_hit = true
 	print("Player health: ", health)
 	$AnimatedSprite2D.play("hit")
 	health = health - 1
