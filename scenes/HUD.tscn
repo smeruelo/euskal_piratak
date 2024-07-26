@@ -4,9 +4,9 @@
 [ext_resource type="Texture2D" uid="uid://crx66ki82klwi" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
 [ext_resource type="Texture2D" uid="uid://bnl1q6qstg7hs" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
 [ext_resource type="Texture2D" uid="uid://b6fcu5h7sd62f" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
-[ext_resource type="Texture2D" uid="uid://d1mad43fwacyu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/3.png" id="4_5alij"]
 [ext_resource type="Texture2D" uid="uid://ijdj6a8j8gry" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
 [ext_resource type="Texture2D" uid="uid://cu3i8hmo5diw7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
+[ext_resource type="Texture2D" uid="uid://s7uyx4o5dqcu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
 [ext_resource type="Texture2D" uid="uid://c6226bfdmsp6x" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
 
 [node name="HUD" type="CanvasLayer"]
@@ -88,7 +88,7 @@ scale = Vector2(3, 3)
 custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 value = 100.0
-texture_progress = ExtResource("4_5alij")
+texture_progress = ExtResource("6_car34")
 
 [node name="bar-texture-left" type="Sprite2D" parent="stamina_bar"]
 z_index = -1
