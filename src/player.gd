@@ -7,7 +7,7 @@ const JUMP_VELOCITY = -400.0
 const BASE_DAMAGE = 15
 const STAMINA_COST = 40
 const STAMINA_RECOVERY = 10 # stamina per second
-const HEALTH_RECOVERY = 5   # health per second
+const HEALTH_RECOVERY = 1   # health per second
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
