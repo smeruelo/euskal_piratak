@@ -35,13 +35,15 @@ func _physics_process(delta):
 	var direction = Input.get_axis("move_left", "move_right")
 	if direction:
 		velocity.x = direction * SPEED
-		
 		if is_hit:
 			$AnimatedSprite2D.play("hit")
 		elif is_attacking:
 			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
-			$AnimatedSprite2D.play("walk")
+			if Input.is_action_pressed("crouch"):
+				$AnimatedSprite2D.play("crouch")
+			else:
+				$AnimatedSprite2D.play("walk")
 		else:
 			$AnimatedSprite2D.play("jump")
 			
@@ -56,7 +58,10 @@ func _physics_process(delta):
 		elif is_attacking:
 			$AnimatedSprite2D.play(current_attack_anim)
 		elif is_on_floor():
-			$AnimatedSprite2D.play("idle")
+			if Input.is_action_pressed("crouch"):
+				$AnimatedSprite2D.play("crouch")
+			else:
+				$AnimatedSprite2D.play("idle")
 		else:
 			$AnimatedSprite2D.play("jump")
 	
@@ -80,6 +85,16 @@ func _input(event):
 		
 	if event.is_action_pressed("restart"):
 		get_tree().reload_current_scene()
+		
+	if event.is_action_pressed("crouch"):
+		var shape = CapsuleShape2D.new()
+		shape.height = 20
+		$CollisionShape2D.set_shape(shape)
+	
+	if event.is_action_released("crouch"):
+		var shape = CapsuleShape2D.new()
+		shape.height = 30
+		$CollisionShape2D.set_shape(shape)
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	print("exited")

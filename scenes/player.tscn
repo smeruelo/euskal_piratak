@@ -1,4 +1,4 @@
-[gd_scene load_steps=42 format=3 uid="uid://bsacqdii0ff5l"]
+[gd_scene load_steps=41 format=3 uid="uid://bsacqdii0ff5l"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_d0qd7"]
 [ext_resource type="Texture2D" uid="uid://crknhygqag8f7" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/15-Attack 1/Attack 1 01.png" id="2_0kise"]
@@ -20,7 +20,6 @@
 [ext_resource type="Texture2D" uid="uid://droxw3pibt6gl" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/07-Dead Hit/Dead Hit 04.png" id="18_whxh1"]
 [ext_resource type="Texture2D" uid="uid://cyoyoxjsgc1at" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/04-Fall/Fall 01.png" id="19_xkkqa"]
 [ext_resource type="Texture2D" uid="uid://28rirvpbj2r6" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 01.png" id="20_as16c"]
-[ext_resource type="Texture2D" uid="uid://bfy8ktie20otm" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/05-Ground/Ground 02.png" id="21_ifkt7"]
 [ext_resource type="Texture2D" uid="uid://ed0orpu2pppg" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 01.png" id="22_t5jkc"]
 [ext_resource type="Texture2D" uid="uid://c6kd5e33ypepk" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 02.png" id="23_amj5j"]
 [ext_resource type="Texture2D" uid="uid://c37fsmn43xox5" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose without Sword/06-Hit/Hit 03.png" id="24_oenlc"]
@@ -86,6 +85,14 @@ animations = [{
 }, {
 "frames": [{
 "duration": 1.0,
+"texture": ExtResource("20_as16c")
+}],
+"loop": true,
+"name": &"crouch",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
 "texture": ExtResource("11_s3at7")
 }, {
 "duration": 1.0,
@@ -124,17 +131,6 @@ animations = [{
 }],
 "loop": true,
 "name": &"fall",
-"speed": 5.0
-}, {
-"frames": [{
-"duration": 1.0,
-"texture": ExtResource("20_as16c")
-}, {
-"duration": 1.0,
-"texture": ExtResource("21_ifkt7")
-}],
-"loop": true,
-"name": &"ground",
 "speed": 5.0
 }, {
 "frames": [{
@@ -212,8 +208,7 @@ animations = [{
 "speed": 5.0
 }]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_47uo8"]
-size = Vector2(25, 28)
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f24jf"]
 
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
@@ -223,13 +218,11 @@ script = ExtResource("1_d0qd7")
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 position = Vector2(0, 1)
 sprite_frames = SubResource("SpriteFrames_37ji3")
-animation = &"hit"
-frame = 1
-frame_progress = 0.720686
+animation = &"idle"
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-1.5, -1)
-shape = SubResource("RectangleShape2D_47uo8")
+scale = Vector2(-0.9, -0.9)
+shape = SubResource("CapsuleShape2D_f24jf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
