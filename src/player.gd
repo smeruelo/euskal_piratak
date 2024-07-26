@@ -126,6 +126,10 @@ func hit():
 	var damage = round(BASE_DAMAGE * (randf() + 1))
 	health = health - damage
 	print("Player health: %s (-%s)" % [health, damage])
+	$Damage_indicator.visible = true
+	$Damage_indicator.text = str(damage * -1)
+	await get_tree().create_timer(1.0).timeout
+	$Damage_indicator.visible = false
 	get_node("../HUD/HBoxContainer/TextureProgressBar").value = health
 	if health <= 0:
 		die()

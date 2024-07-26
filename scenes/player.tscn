@@ -1,4 +1,4 @@
-[gd_scene load_steps=41 format=3 uid="uid://bsacqdii0ff5l"]
+[gd_scene load_steps=43 format=3 uid="uid://bsacqdii0ff5l"]
 
 [ext_resource type="Script" path="res://src/player.gd" id="1_d0qd7"]
 [ext_resource type="Texture2D" uid="uid://crknhygqag8f7" path="res://assets/Captain Clown Nose/Sprites/Captain Clown Nose/Captain Clown Nose with Sword/15-Attack 1/Attack 1 01.png" id="2_0kise"]
@@ -210,6 +210,13 @@ animations = [{
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_f24jf"]
 
+[sub_resource type="SystemFont" id="SystemFont_836bb"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_rod6e"]
+font = SubResource("SystemFont_836bb")
+font_size = 10
+font_color = Color(1, 0.37, 0.37, 1)
+
 [node name="Player" type="CharacterBody2D"]
 scale = Vector2(2, 2)
 collision_layer = 2
@@ -225,6 +232,15 @@ scale = Vector2(-0.9, -0.9)
 shape = SubResource("CapsuleShape2D_f24jf")
 
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
+
+[node name="Damage_indicator" type="Label" parent="."]
+visible = false
+offset_left = -8.0
+offset_top = -31.0
+offset_right = 7.0
+offset_bottom = -17.0
+text = "-10"
+label_settings = SubResource("LabelSettings_rod6e")
 
 [connection signal="animation_looped" from="AnimatedSprite2D" to="." method="_on_animated_sprite_2d_animation_looped"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]
