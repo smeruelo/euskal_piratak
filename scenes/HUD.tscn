@@ -1,9 +1,11 @@
-[gd_scene load_steps=7 format=3 uid="uid://bh5uid8opw16o"]
+[gd_scene load_steps=9 format=3 uid="uid://bh5uid8opw16o"]
 
 [ext_resource type="Texture2D" uid="uid://bdkonpwpdoxnv" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
 [ext_resource type="Texture2D" uid="uid://crx66ki82klwi" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
 [ext_resource type="Texture2D" uid="uid://bnl1q6qstg7hs" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
+[ext_resource type="Texture2D" uid="uid://b6fcu5h7sd62f" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
 [ext_resource type="Texture2D" uid="uid://d1mad43fwacyu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/3.png" id="4_5alij"]
+[ext_resource type="Texture2D" uid="uid://ijdj6a8j8gry" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
 [ext_resource type="Texture2D" uid="uid://cu3i8hmo5diw7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
 [ext_resource type="Texture2D" uid="uid://c6226bfdmsp6x" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
 
@@ -42,6 +44,37 @@ texture = ExtResource("1_nl6ci")
 z_index = -1
 position = Vector2(23, 1.984)
 scale = Vector2(0.7, 0.9385)
+texture = ExtResource("2_i2wjg")
+
+[node name="boss_bar" type="HBoxContainer" parent="."]
+visible = false
+offset_left = 75.0
+offset_top = 139.0
+offset_right = 188.0
+offset_bottom = 141.0
+scale = Vector2(3, 3)
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="boss_bar"]
+custom_minimum_size = Vector2(113, 0)
+layout_mode = 2
+value = 100.0
+texture_progress = ExtResource("2_n4cha")
+
+[node name="bar-texture-left" type="Sprite2D" parent="boss_bar"]
+z_index = -1
+position = Vector2(-0.727657, 2)
+scale = Vector2(0.962145, 0.958333)
+texture = ExtResource("4_xc23l")
+
+[node name="bar-texture-mid" type="Sprite2D" parent="boss_bar"]
+position = Vector2(98.5833, 2)
+scale = Vector2(5.25521, 0.958333)
+texture = ExtResource("2_sgj3s")
+
+[node name="bar-texture-right" type="Sprite2D" parent="boss_bar"]
+z_index = -1
+position = Vector2(198.667, 2)
+scale = Vector2(1.02083, 0.958333)
 texture = ExtResource("2_i2wjg")
 
 [node name="stamina_bar" type="HBoxContainer" parent="."]
