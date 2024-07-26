@@ -3,6 +3,7 @@ extends CharacterBody2D
 
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
+const BASE_DAMAGE = 15
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -14,7 +15,7 @@ var is_hit = false
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
-var health = 4
+var health = 100
 
 func _process(_delta):
 	if is_dead:
@@ -121,9 +122,11 @@ func hit():
 		return
 		
 	is_hit = true
-	print("Player health: ", health)
 	$AnimatedSprite2D.play("hit")
-	health = health - 1
+	var damage = round(BASE_DAMAGE * (randf() + 1))
+	health = health - damage
+	print("Player health: %s (-%s)" % [health, damage])
+	get_node("../HUD/HBoxContainer/TextureProgressBar").value = health
 	if health <= 0:
 		die()
 	
