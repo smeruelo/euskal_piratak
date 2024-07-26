@@ -13,6 +13,8 @@ var is_dead = false
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
+var health = 4
+
 func _process(_delta):
 	if is_dead:
 		get_tree().reload_current_scene()
@@ -80,16 +82,23 @@ func _on_enemy_left_entered(enemy):
 	if is_attacking and not $AnimatedSprite2D.flip_h:
 		enemy.die()
 	else:
-		die()
+		hit()
 
 func _on_enemy_right_entered(enemy):
 	if is_attacking and $AnimatedSprite2D.flip_h:
 		enemy.die()
 	else:
-		die()
+		hit()
 	
 func _on_enemy_top_entered(enemy):
-	die()
+	hit()
+
+func hit():
+	print("Player health: ", health)
+	$AnimatedSprite2D.play("hit")
+	health = health - 1
+	if health <= 0:
+		die()
 	
 func die():
 	print("died")

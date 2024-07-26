@@ -1,10 +1,11 @@
-[gd_scene load_steps=6 format=3 uid="uid://dwicj13gkptfj"]
+[gd_scene load_steps=7 format=3 uid="uid://dwicj13gkptfj"]
 
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://scenes/player.tscn" id="1_yu70o"]
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://scenes/enemy.tscn" id="2_jv66j"]
 [ext_resource type="PackedScene" uid="uid://bkmxl6exnaivx" path="res://scenes/level.tscn" id="4_xvaea"]
 [ext_resource type="Script" path="res://src/Camera2D.gd" id="5_4tilf"]
 [ext_resource type="PackedScene" uid="uid://dnwhia8dkbn15" path="res://scenes/background.tscn" id="5_qwh3e"]
+[ext_resource type="PackedScene" uid="uid://bh5uid8opw16o" path="res://scenes/HUD.tscn" id="6_a6pi8"]
 
 [node name="main" type="Node2D"]
 
@@ -24,6 +25,8 @@ _subject = NodePath("../Player")
 
 [node name="Background" parent="Camera" instance=ExtResource("5_qwh3e")]
 position = Vector2(-401, -304)
+
+[node name="HUD" parent="." instance=ExtResource("6_a6pi8")]
 
 [connection signal="left_entered" from="enemy" to="Player" method="_on_enemy_left_entered"]
 [connection signal="right_entered" from="enemy" to="Player" method="_on_enemy_right_entered"]
