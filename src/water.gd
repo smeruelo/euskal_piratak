@@ -9,6 +9,5 @@ func _spawn_splash(x : float):
 	
 	
 func _on_body_entered(body : Node2D):
-	print(body)
 	_spawn_splash(body.position.x)
 	#body.die()

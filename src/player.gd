@@ -4,6 +4,9 @@ extends CharacterBody2D
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const BASE_DAMAGE = 15
+const STAMINA_COST = 40
+const STAMINA_RECOVERY = 10 # stamina per second
+const HEALTH_RECOVERY = 5   # health per second
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
@@ -16,6 +19,7 @@ var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
 var health = 100
+var stamina = 100
 
 func _process(_delta):
 	if is_dead:
@@ -27,9 +31,14 @@ func _physics_process(delta):
 	if not is_on_floor():
 		velocity.y += gravity * delta
 		
-	# Handle Jump.
-	if Input.is_action_just_pressed("jump") and is_on_floor():
-		velocity.y = JUMP_VELOCITY
+	# Handle Jump and double jump
+	if Input.is_action_just_pressed("jump"):
+		if is_on_floor():
+			velocity.y = JUMP_VELOCITY
+		elif stamina > STAMINA_COST:
+			velocity.y = JUMP_VELOCITY
+			stamina = stamina - STAMINA_COST
+			print("Stamina: ", stamina)
 		
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
@@ -123,17 +132,38 @@ func hit():
 		
 	is_hit = true
 	$AnimatedSprite2D.play("hit")
+	
+	var health_bar = get_node("../HUD/health_bar/TextureProgressBar")	
 	var damage = round(BASE_DAMAGE * (randf() + 1))
+	
 	health = health - damage
 	print("Player health: %s (-%s)" % [health, damage])
 	$Damage_indicator.visible = true
 	$Damage_indicator.text = str(damage * -1)
 	await get_tree().create_timer(1.0).timeout
 	$Damage_indicator.visible = false
-	get_node("../HUD/HBoxContainer/TextureProgressBar").value = health
+	health_bar.value = health
 	if health <= 0:
 		die()
 	
 func die():
 	print("died")
 	is_dead = true
+
+
+func _on_timer_timeout():
+	# Stamina recovery
+	if stamina < 100:
+		stamina = stamina + STAMINA_RECOVERY
+	else:
+		stamina = 100
+	get_node("../HUD/stamina_bar/TextureProgressBar").value = stamina
+	
+	# Health recovery
+	if health < 100:
+		health = health + HEALTH_RECOVERY
+	else:
+		health = 100
+	get_node("../HUD/health_bar/TextureProgressBar").value = health
+
+
