@@ -29,7 +29,7 @@ animations = [{
 }]
 
 [sub_resource type="SegmentShape2D" id="SegmentShape2D_vybef"]
-b = Vector2(2304, 0)
+b = Vector2(4607, 0)
 
 [node name="Water" type="Area2D"]
 z_index = 10
@@ -38,8 +38,8 @@ script = ExtResource("1_wkcdq")
 _splash = ExtResource("2_6xnce")
 
 [node name="bottom" type="Sprite2D" parent="."]
-position = Vector2(1152, 47.5)
-scale = Vector2(24, 1.46875)
+position = Vector2(2304, 47.5)
+scale = Vector2(48, 1.46875)
 texture = ExtResource("1_expq1")
 
 [node name="Waves" type="Node2D" parent="."]
@@ -206,6 +206,174 @@ offset = Vector2(48, 8)
 
 [node name="Waves24" type="AnimatedSprite2D" parent="Waves"]
 position = Vector2(1440, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves25" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2304, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves26" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2400, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves27" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2880, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves28" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2976, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves29" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3072, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves30" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3168, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves31" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3264, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves32" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3360, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves33" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2688, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves34" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2784, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves35" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2496, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves36" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(2592, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves37" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3456, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves38" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3552, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves39" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4032, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves40" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4128, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves41" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4224, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves42" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4320, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves43" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4416, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves44" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(4512, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves45" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3840, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves46" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3936, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0952832
+offset = Vector2(48, 8)
+
+[node name="Waves47" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3648, 0)
+sprite_frames = SubResource("SpriteFrames_ro7h2")
+autoplay = "default"
+frame_progress = 0.0775972
+offset = Vector2(48, 8)
+
+[node name="Waves48" type="AnimatedSprite2D" parent="Waves"]
+position = Vector2(3744, 0)
 sprite_frames = SubResource("SpriteFrames_ro7h2")
 autoplay = "default"
 frame_progress = 0.0952832

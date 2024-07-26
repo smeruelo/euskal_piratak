@@ -37,8 +37,8 @@ script = ExtResource("1_cd5tc")
 metadata/_edit_vertical_guides_ = [-1266.0, -367.0]
 
 [node name="Picture" type="Sprite2D" parent="."]
-position = Vector2(1178.5, 302)
-scale = Vector2(6.13802, 4.70313)
+position = Vector2(2018.5, 302)
+scale = Vector2(10.513, 4.70313)
 texture = ExtResource("1_o10v1")
 
 [node name="Reflections" type="AnimatedSprite2D" parent="."]
