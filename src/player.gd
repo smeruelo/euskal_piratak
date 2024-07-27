@@ -2,6 +2,8 @@ extends CharacterBody2D
 
 @onready var hud = get_node("../HUD")
 
+signal dead(body)
+
 const SPEED = 300.0
 const JUMP_VELOCITY = -400.0
 const BASE_DAMAGE = 15
@@ -21,9 +23,16 @@ var current_attack_anim
 
 var is_navigating = false
 
-func _process(_delta):
-	if is_dead:
-		get_tree().reload_current_scene()
+func init():
+	is_attacking = false
+	is_dead = false
+	is_hit = false
+	hud.increase_health(100)
+	hud.increase_stamina(100)
+
+#func _process(_delta):
+#	if is_dead:
+#		get_tree().reload_current_scene()
 
 func _physics_process(delta):
 	if is_navigating:
@@ -154,6 +163,7 @@ func hit():
 func die():
 	print("died")
 	is_dead = true
+	dead.emit(self)
 
 func _on_timer_timeout():
 	hud.increase_stamina(STAMINA_RECOVERY)
