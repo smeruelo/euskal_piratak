@@ -1,7 +1,35 @@
-[gd_scene load_steps=4 format=3 uid="uid://bwe6kv433dihw"]
+[gd_scene load_steps=8 format=3 uid="uid://bwe6kv433dihw"]
 
 [ext_resource type="Script" path="res://src/final_level/enemy_bullet.gd" id="1_13gnm"]
 [ext_resource type="Texture2D" uid="uid://cjcr52vtmgb7r" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="2_cjjqp"]
+[ext_resource type="Texture2D" uid="uid://6i0v5cgs3smf" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/1.png" id="3_wpve7"]
+[ext_resource type="Texture2D" uid="uid://cihtos5so6j0p" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/2.png" id="4_nakp2"]
+[ext_resource type="Texture2D" uid="uid://cwlwxo65rec7t" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Destroyed/3.png" id="5_2kht8"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_w7gss"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("3_wpve7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_nakp2")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_2kht8")
+}],
+"loop": true,
+"name": &"destroyed",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_cjjqp")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 5.0
+}]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lfi4"]
 
@@ -14,8 +42,15 @@ script = ExtResource("1_13gnm")
 [node name="VisibleOnScreenNotifier2D" type="VisibleOnScreenNotifier2D" parent="."]
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+visible = false
 scale = Vector2(5, 5)
 texture = ExtResource("2_cjjqp")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+scale = Vector2(4, 4)
+sprite_frames = SubResource("SpriteFrames_w7gss")
+animation = &"idle"
+frame_progress = 0.392922
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 rotation = -1.58301

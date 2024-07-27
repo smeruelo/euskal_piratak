@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://src/final_level/final_level.gd" id="1_0wosf"]
 [ext_resource type="PackedScene" uid="uid://b1hnbafxlnpbo" path="res://scenes/final_level/boss.tscn" id="1_0xv4f"]
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://scenes/player.tscn" id="2_l8vyv"]
-[ext_resource type="Texture2D" uid="uid://b4dju3y4ldvji" path="res://assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="4_4bs4s"]
-[ext_resource type="Texture2D" uid="uid://u2cm5fa4p44g" path="res://assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="5_trc00"]
+[ext_resource type="Texture2D" uid="uid://dmk7ivbc472g5" path="res://assets/Pirate Ship/Sprites/Tilesets/Terrain and Back Wall (32x32).png" id="4_4bs4s"]
+[ext_resource type="Texture2D" uid="uid://17uaar5ajmdq" path="res://assets/Palm Tree Island/Sprites/Terrain/Terrain (32x32).png" id="5_trc00"]
 [ext_resource type="PackedScene" uid="uid://bh5uid8opw16o" path="res://scenes/HUD.tscn" id="5_u3lox"]
-[ext_resource type="PackedScene" uid="uid://g2x5xfewd0ai" path="res://scenes/final_level/door.tscn" id="6_lvgs1"]
+[ext_resource type="PackedScene" path="res://scenes/final_level/door.tscn" id="6_lvgs1"]
 [ext_resource type="Script" path="res://scenes/final_level/door.gd" id="7_udgr3"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_buxgc"]
