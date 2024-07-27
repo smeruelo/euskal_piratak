@@ -1,4 +1,5 @@
 # Euskal Piratak
+1st Prize at [Euskal Encounter 32](https://ee32.euskalencounter.org/) Fast FOSS game developing competition
 
 # Play
 ```bash
@@ -7,10 +8,10 @@ godot project.binary
 ```
 
 # Crew
-Made by *w0pr*
-Code: [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo), [ziberpunk](https://github.com/abeaumont)
+Made by **w0pr**  
+Code: [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo), [ziberpunk](https://github.com/abeaumont)  
 Music: amok
 
 # Licence
-Game: [WTFPL – Do What the Fuck You Want to Public License](http://www.wtfpl.net/)
+Game: [WTFPL – Do What the Fuck You Want to Public License](http://www.wtfpl.net/)  
 Assets: [Treasure Hunters](https://pixelfrog-assets.itch.io/treasure-hunters) by Pixel Frog, under CC Zero [License](http://creativecommons.org/publicdomain/zero/1.0/)
