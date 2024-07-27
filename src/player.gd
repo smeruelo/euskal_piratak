@@ -12,9 +12,9 @@ const HEALTH_RECOVERY = 1   # health per second
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
-var is_attacking = false
-var is_dead = false
-var is_hit = false
+@export var is_attacking = false
+@export var is_dead = false
+@export var is_hit = false
 
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
@@ -122,6 +122,9 @@ func _on_enemy_right_entered(enemy):
 func _on_enemy_top_entered(enemy):
 	hit()
 
+func _on_bullet_entered(bullet):
+	hit()
+	
 func hit():
 	# Wait for the animation to finish before being hit again
 	if is_hit: 

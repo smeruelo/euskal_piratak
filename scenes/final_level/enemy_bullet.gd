@@ -2,6 +2,7 @@ extends Area2D
 
 @export var speed = 200
 
+#signal entered(bullet)
 
 func start(pos):
 	position = pos
@@ -26,3 +27,9 @@ func _on_visible_on_screen_notifier_2d_screen_entered(area):
 
 func _on_visible_on_screen_notifier_2d_screen_exited():
 	queue_free()
+
+
+func _on_body_entered(body):
+	if body.name == "Player":
+		body.hit()
+		#entered.emit(self)
