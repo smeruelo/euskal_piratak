@@ -1510,8 +1510,10 @@ animations = [{
 }]
 
 [sub_resource type="LabelSettings" id="LabelSettings_jjgpn"]
-font_size = 39
-outline_size = 2
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0.372549, 0, 1)
 
 [node name="main" type="Node"]
 script = ExtResource("1_lnabf")
@@ -1543,12 +1545,14 @@ sprite_frames = SubResource("SpriteFrames_alujv")
 
 [node name="Label" type="Label" parent="."]
 visible = false
-offset_left = 184.0
-offset_top = 136.0
-offset_right = 385.0
-offset_bottom = 159.0
-text = "Congratulations! You Win!"
+offset_left = 80.0
+offset_top = 80.0
+offset_right = 721.0
+offset_bottom = 303.0
+text = "Congratulations!
+You Win!"
 label_settings = SubResource("LabelSettings_jjgpn")
+horizontal_alignment = 1
 
 [connection signal="body_entered" from="Chest" to="." method="_on_chest_body_entered"]
 [connection signal="body_entered" from="Chest" to="Player" method="_on_chest_body_entered"]
