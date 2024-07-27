@@ -2,7 +2,7 @@
 
 # Crew
 Made by *w0pr*
-Code: [ziberpunk](https://github.com/abeaumont), [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo)
+Code: [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo), [ziberpunk](https://github.com/abeaumont)
 Music: amok
 
 # Licence
