@@ -208,6 +208,7 @@ size = Vector2(21, 19)
 script = ExtResource("1_a0cd8")
 
 [node name="head_level" type="CharacterBody2D" parent="."]
+collision_mask = 5
 script = ExtResource("2_3x8mr")
 
 [node name="AnimatedSprite2D_head" type="AnimatedSprite2D" parent="head_level"]
@@ -219,6 +220,8 @@ animation = &"idle"
 shape = SubResource("RectangleShape2D_qofbu")
 
 [node name="Area_head" type="Area2D" parent="head_level"]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="head_level/Area_head"]
 position = Vector2(-1, 0)
@@ -226,6 +229,7 @@ shape = SubResource("RectangleShape2D_yg7mq")
 
 [node name="mid_level" type="CharacterBody2D" parent="."]
 position = Vector2(1, 0)
+collision_mask = 5
 script = ExtResource("14_t42st")
 
 [node name="AnimatedSprite2D_mid" type="AnimatedSprite2D" parent="mid_level"]
@@ -238,12 +242,15 @@ position = Vector2(-1, 22)
 shape = SubResource("RectangleShape2D_qrk3o")
 
 [node name="Area_mid" type="Area2D" parent="mid_level"]
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="mid_level/Area_mid"]
 position = Vector2(-3, 21.5)
 shape = SubResource("RectangleShape2D_6jf5m")
 
 [node name="ground_level" type="CharacterBody2D" parent="."]
+collision_mask = 5
 
 [node name="AnimatedSprite2D_ground" type="AnimatedSprite2D" parent="ground_level"]
 position = Vector2(1, 39)
@@ -257,6 +264,8 @@ shape = SubResource("RectangleShape2D_kg1bc")
 
 [node name="Area_ground" type="Area2D" parent="ground_level"]
 position = Vector2(58, 19)
+collision_layer = 4
+collision_mask = 2
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="ground_level/Area_ground"]
 position = Vector2(-58.5, 24.5)
