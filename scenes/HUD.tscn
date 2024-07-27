@@ -1,17 +1,18 @@
-[gd_scene load_steps=10 format=3 uid="uid://bh5uid8opw16o"]
+[gd_scene load_steps=11 format=3 uid="uid://bh5uid8opw16o"]
 
-[ext_resource type="Script" path="res://src/HUD.gd" id="1_ll2b2"]
-[ext_resource type="Texture2D" uid="uid://csbgmhoohclpd" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
-[ext_resource type="Texture2D" uid="uid://34cjvi2q67bx" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
-[ext_resource type="Texture2D" uid="uid://c2wh02r1fkh46" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
-[ext_resource type="Texture2D" uid="uid://dkjtaurawmja6" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
-[ext_resource type="Texture2D" uid="uid://cuf8ds61musnu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
-[ext_resource type="Texture2D" uid="uid://b7ihj2e1nwuru" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
-[ext_resource type="Texture2D" uid="uid://b67bu1wyxfyc7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
-[ext_resource type="Texture2D" uid="uid://y2aw12rf7jae" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
+[ext_resource type="Texture2D" uid="uid://bdkonpwpdoxnv" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
+[ext_resource type="Script" path="res://src/HUD.gd" id="1_uogmr"]
+[ext_resource type="Texture2D" uid="uid://crx66ki82klwi" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/4.png" id="2_i2wjg"]
+[ext_resource type="Texture2D" uid="uid://bnl1q6qstg7hs" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/1.png" id="2_n4cha"]
+[ext_resource type="Texture2D" uid="uid://b6fcu5h7sd62f" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/3.png" id="2_sgj3s"]
+[ext_resource type="Texture2D" uid="uid://ijdj6a8j8gry" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/2.png" id="4_xc23l"]
+[ext_resource type="Texture2D" uid="uid://cu3i8hmo5diw7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/3.png" id="5_pw3x0"]
+[ext_resource type="Texture2D" uid="uid://qj3uc4xc6ng7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/5.png" id="5_txgn8"]
+[ext_resource type="Texture2D" uid="uid://s7uyx4o5dqcu" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
+[ext_resource type="Texture2D" uid="uid://c6226bfdmsp6x" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
 
 [node name="HUD" type="CanvasLayer"]
-script = ExtResource("1_ll2b2")
+script = ExtResource("1_uogmr")
 
 [node name="ScoreLabel" type="Label" parent="."]
 offset_right = 40.0
@@ -49,33 +50,33 @@ scale = Vector2(0.7, 0.9385)
 texture = ExtResource("2_i2wjg")
 
 [node name="boss_bar" type="HBoxContainer" parent="."]
-visible = false
-offset_left = 75.0
+offset_left = 137.0
 offset_top = 139.0
-offset_right = 188.0
+offset_right = 329.0
 offset_bottom = 141.0
 scale = Vector2(3, 3)
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="boss_bar"]
+z_index = 1
 custom_minimum_size = Vector2(113, 0)
 layout_mode = 2
 value = 100.0
-texture_progress = ExtResource("2_n4cha")
+texture_progress = ExtResource("5_txgn8")
 
 [node name="bar-texture-left" type="Sprite2D" parent="boss_bar"]
 z_index = -1
-position = Vector2(-0.727657, 2)
+position = Vector2(-1.06099, 2)
 scale = Vector2(0.962145, 0.958333)
 texture = ExtResource("4_xc23l")
 
 [node name="bar-texture-mid" type="Sprite2D" parent="boss_bar"]
-position = Vector2(98.5833, 2)
-scale = Vector2(5.25521, 0.958333)
+position = Vector2(86.9166, 2)
+scale = Vector2(4.77604, 0.958333)
 texture = ExtResource("2_sgj3s")
 
 [node name="bar-texture-right" type="Sprite2D" parent="boss_bar"]
 z_index = -1
-position = Vector2(198.667, 2)
+position = Vector2(179.667, 2)
 scale = Vector2(1.02083, 0.958333)
 texture = ExtResource("2_i2wjg")
 

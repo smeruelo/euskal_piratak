@@ -1,6 +1,7 @@
 [gd_scene load_steps=34 format=3 uid="uid://c7p6ed6uvn2xr"]
 
 [ext_resource type="Script" path="res://src/enemy.gd" id="1_y3csa"]
+<<<<<<< HEAD
 [ext_resource type="Texture2D" uid="uid://do6p50tmddyjs" path="res://assets/The Crusty Crew/Sprites/Crabby/10-Dead Ground/Dead Ground 01.png" id="2_32ut1"]
 [ext_resource type="Texture2D" uid="uid://dk0531uxmtikt" path="res://assets/The Crusty Crew/Sprites/Crabby/09-Dead Hit/Dead Hit 01.png" id="2_eljbx"]
 [ext_resource type="Texture2D" uid="uid://ngqdtf2fdq4w" path="res://assets/The Crusty Crew/Sprites/Crabby/01-Idle/Idle 01.png" id="2_jjvnh"]

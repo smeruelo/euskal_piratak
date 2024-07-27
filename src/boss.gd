@@ -2,7 +2,7 @@ extends Node2D
 
 const DIFFICULTY = 5 # Less is harder, higher is easier
 const PLAYER_BASE_DAMAGE = 15
-const MAX_BOSS_HEALTH = 100
+const MAX_BOSS_HEALTH = 500
 
 var bullet_scene = preload("res://scenes/final_level/enemy_bullet.tscn")
 
@@ -18,6 +18,7 @@ var state = THREE
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("../HUD/boss_bar").visible = true
+	get_node("../HUD/boss_bar/TextureProgressBar").max_value = MAX_BOSS_HEALTH
 
 func shoot(shooter):
 	var b = bullet_scene.instantiate()
@@ -25,7 +26,7 @@ func shoot(shooter):
 	b.start(shooter.global_position)
 	
 func hit():
-	var boss_health_bar = get_node("../HUD/health_bar/TextureProgressBar")	
+	var boss_health_bar = get_node("../HUD/boss_bar/TextureProgressBar")	
 	var damage = round(PLAYER_BASE_DAMAGE * (randf() + 1))
 	
 	boss_health = boss_health - damage
