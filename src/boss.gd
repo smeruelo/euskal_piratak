@@ -87,22 +87,25 @@ func _on_animated_sprite_2d_ground_animation_looped():
 
 
 func _on_area_head_body_entered(body):
-	if body.name == "Player" and body.is_attacking:
-		get_node("head_level/AnimatedSprite2D_head").play("hit")
+	var m = get_node("head_level/AnimatedSprite2D_head")
+	if body.name == "Player" and body.is_attacking and not m.animation == "hit":
+		m.play("hit")
 		hit()
 		#head_entered.emit(self)
 
 
 func _on_area_mid_body_entered(body):
-	if body.name == "Player" and body.is_attacking:
-		get_node("mid_level/AnimatedSprite2D_mid").play("hit")
+	var m = get_node("mid_level/AnimatedSprite2D_mid")
+	if body.name == "Player" and body.is_attacking and not m.animation == "hit":
+		m.play("hit")
 		hit()
 		#mid_entered.emit(self)
 		
 		
 func _on_area_ground_body_entered(body):
-	if body.name == "Player" and body.is_attacking:
-		get_node("ground_level/AnimatedSprite2D_ground").play("hit")
+	var m = get_node("ground_level/AnimatedSprite2D_ground")
+	if body.name == "Player" and body.is_attacking and not m.animation == "hit":
+		m.play("hit")
 		hit()
 		#ground_entered.emit(self)
 
