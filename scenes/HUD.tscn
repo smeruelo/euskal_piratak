@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=3 uid="uid://bh5uid8opw16o"]
+[gd_scene load_steps=13 format=3 uid="uid://bh5uid8opw16o"]
 
 [ext_resource type="Texture2D" uid="uid://csbgmhoohclpd" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
 [ext_resource type="Script" path="res://src/HUD.gd" id="1_uogmr"]
@@ -15,6 +15,12 @@
 font_size = 80
 font_color = Color(0, 0, 0, 1)
 outline_size = 8
+outline_color = Color(0, 0.372549, 0, 1)
+
+[sub_resource type="LabelSettings" id="LabelSettings_sdloj"]
+font_size = 25
+font_color = Color(0, 0, 0, 1)
+outline_size = 3
 outline_color = Color(0, 0.372549, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
@@ -155,6 +161,18 @@ text = "Retry"
 layout_mode = 2
 text = "Exit
 "
+
+[node name="credits" type="Label" parent="Game_Over/VBoxContainer"]
+layout_mode = 2
+text = "
+
+
+made by w0pr
+code: lothwen / tekess / ziberpunk
+music: amok"
+label_settings = SubResource("LabelSettings_sdloj")
+horizontal_alignment = 1
+vertical_alignment = 2
 
 [connection signal="pressed" from="Game_Over/VBoxContainer/RetryButton" to="." method="_on_retry_button_pressed"]
 [connection signal="pressed" from="Game_Over/VBoxContainer/ExitButton" to="." method="_on_exit_button_pressed"]

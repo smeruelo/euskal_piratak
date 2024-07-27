@@ -9,9 +9,13 @@ signal retry_button_pressed
 
 func _init_ui():
 	game_over_menu.visible = false
+	health_bar.visible = true
+	stamina_bar.visible = true
 	
 func game_over():
 	game_over_menu.visible = true
+	health_bar.visible = false
+	stamina_bar.visible = false
 
 func increase_health(amount):
 	health_bar.value = min(health_bar.value + amount, 100)
