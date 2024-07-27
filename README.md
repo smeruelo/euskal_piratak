@@ -1,10 +1,10 @@
-# euskal_piratak
+# Euskal Piratak
 
-## License
-[WTFPL – Do What the Fuck You Want to Public License](http://www.wtfpl.net/)
+# Crew
+Made by *w0pr*
+Code: [ziberpunk](https://github.com/abeaumont), [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo)
+Music: amok
 
-## Assets used
-
-- [Treasure Hunters](https://pixelfrog-assets.itch.io/treasure-hunters) by Pixel Frog, under CC Zero [License](http://creativecommons.org/publicdomain/zero/1.0/)
-- [Battle Sounds](https://freesound.org/people/LukeSharples/packs/13289/) by Luke Sharples, under CC Attribution [License](https://creativecommons.org/licenses/by/4.0/)
-- [Victory War & Battle Music Loops Library](https://freesound.org/people/LittleRobotSoundFactory/packs/18000/) by Little Robot Sound Factory, under CC Attribution [License](https://creativecommons.org/licenses/by/4.0/)
+# Licence
+Game: [WTFPL – Do What the Fuck You Want to Public License](http://www.wtfpl.net/)
+Assets: [Treasure Hunters](https://pixelfrog-assets.itch.io/treasure-hunters) by Pixel Frog, under CC Zero [License](http://creativecommons.org/publicdomain/zero/1.0/)
