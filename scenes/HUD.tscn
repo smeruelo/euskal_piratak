@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://bh5uid8opw16o"]
+[gd_scene load_steps=12 format=3 uid="uid://bh5uid8opw16o"]
 
 [ext_resource type="Texture2D" uid="uid://csbgmhoohclpd" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Big Bars/1.png" id="1_nl6ci"]
 [ext_resource type="Script" path="res://src/HUD.gd" id="1_uogmr"]
@@ -10,6 +10,12 @@
 [ext_resource type="Texture2D" uid="uid://5sui4tbbsb1g" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/5.png" id="5_txgn8"]
 [ext_resource type="Texture2D" uid="uid://b67bu1wyxfyc7" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Colors/4.png" id="6_car34"]
 [ext_resource type="Texture2D" uid="uid://y2aw12rf7jae" path="res://assets/Wood and Paper UI/Sprites/Life Bars/Medium Bars/5.png" id="6_vqbab"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_yxile"]
+font_size = 80
+font_color = Color(0, 0, 0, 1)
+outline_size = 8
+outline_color = Color(0, 0.372549, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
 script = ExtResource("1_uogmr")
@@ -119,7 +125,6 @@ offset_right = 20.0
 offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(2.7, 2.7)
 
 [node name="VBoxContainer" type="VBoxContainer" parent="Game_Over"]
 layout_mode = 1
@@ -138,6 +143,9 @@ grow_vertical = 2
 [node name="Label" type="Label" parent="Game_Over/VBoxContainer"]
 layout_mode = 2
 text = "Game Over"
+label_settings = SubResource("LabelSettings_yxile")
+horizontal_alignment = 1
+vertical_alignment = 1
 
 [node name="RetryButton" type="Button" parent="Game_Over/VBoxContainer"]
 layout_mode = 2
