@@ -1,0 +1,51 @@
+[gd_scene load_steps=3 format=3 uid="uid://f8c521s3c71m"]
+
+[ext_resource type="Script" path="res://src/start.gd" id="1_3wk6n"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_q1poj"]
+font_size = 50
+font_color = Color(1, 0, 0, 1)
+
+[node name="main" type="Node2D"]
+script = ExtResource("1_3wk6n")
+
+[node name="Game_Start" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = 385.0
+offset_top = 252.0
+offset_right = 385.0
+offset_bottom = 252.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Game_Start"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -171.5
+offset_top = -52.0
+offset_right = 171.5
+offset_bottom = 52.0
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Euskal Piratak" type="Label" parent="Game_Start/VBoxContainer"]
+layout_mode = 2
+text = "Euskal Piratak"
+label_settings = SubResource("LabelSettings_q1poj")
+horizontal_alignment = 1
+
+[node name="StartButton" type="Button" parent="Game_Start/VBoxContainer"]
+layout_mode = 2
+text = "Start"
+
+[connection signal="pressed" from="Game_Start/VBoxContainer/StartButton" to="." method="_on_start_button_pressed"]

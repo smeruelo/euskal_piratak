@@ -10,6 +10,9 @@ signal retry_button_pressed
 func _init_ui():
 	game_over_menu.visible = false
 	
+func game_over():
+	game_over_menu.visible = true
+
 func increase_health(amount):
 	health_bar.value = min(health_bar.value + amount, 100)
 	
@@ -27,3 +30,4 @@ func _on_exit_button_pressed():
 
 func _on_retry_button_pressed():
 	retry_button_pressed.emit()
+

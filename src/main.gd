@@ -5,20 +5,19 @@ extends Node2D
 @onready var hud = $HUD
 
 func _ready():
+	hud._init_ui()
 	init_game()
 
 func init_game():
-	hud._init_ui()
 	player.init()
 		
 func game_over():
-	game_over_menu.visible = true
+	hud.game_over()
 
 func _on_boat_boarded(body):
 	$Camera._subject = null
 	await get_tree().create_timer(4.0).timeout
 	get_tree().change_scene_to_file("res://scenes/final_level/final_level.tscn")
-
 
 func _on_player_dead(_player):
 	game_over()
@@ -29,3 +28,6 @@ func _on_hud_exit_button_pressed():
 
 func _on_hud_retry_button_pressed():
 	get_tree().reload_current_scene()
+
+func _on_hud_start_button_pressed():
+	init_game()
