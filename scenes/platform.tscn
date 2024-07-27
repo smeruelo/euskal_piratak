@@ -1,0 +1,56 @@
+[gd_scene load_steps=12 format=3 uid="uid://dw4p41r1g4wjh"]
+
+[ext_resource type="Texture2D" uid="uid://dj45hsp4gxv3r" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Platform.png" id="1_7bt0i"]
+[ext_resource type="Texture2D" uid="uid://bpyynqrrlk0t7" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 01.png" id="2_jyx5w"]
+[ext_resource type="Texture2D" uid="uid://4w2487xlk6aa" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 02.png" id="3_6552x"]
+[ext_resource type="Texture2D" uid="uid://du671t1qhltkf" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 03.png" id="4_rbq1w"]
+[ext_resource type="Texture2D" uid="uid://csy7lhoaxhgl1" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 04.png" id="5_gl3ve"]
+[ext_resource type="Texture2D" uid="uid://fl2j0pkcw8hd" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 05.png" id="6_x8sx7"]
+[ext_resource type="Texture2D" uid="uid://xwd7yhoqrqmi" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 06.png" id="7_aq7fp"]
+[ext_resource type="Texture2D" uid="uid://dqw4u8m7oaawo" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 07.png" id="8_5sfd7"]
+[ext_resource type="Texture2D" uid="uid://cfmt8ec7cp8hy" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 08.png" id="9_05olm"]
+[ext_resource type="Texture2D" uid="uid://cx8n50wxaecpm" path="res://assets/Palm Tree Island/Sprites/Objects/Flag/Flag 09.png" id="10_enlm1"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5gbub"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_jyx5w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_6552x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_rbq1w")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_gl3ve")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_x8sx7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_aq7fp")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_5sfd7")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_05olm")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_enlm1")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[node name="Platform" type="Sprite2D"]
+texture = ExtResource("1_7bt0i")
+
+[node name="Flag" type="AnimatedSprite2D" parent="."]
+position = Vector2(15, -53)
+sprite_frames = SubResource("SpriteFrames_5gbub")
+autoplay = "default"
+frame_progress = 0.421045

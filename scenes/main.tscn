@@ -1,4 +1,4 @@
-[gd_scene load_steps=25 format=3 uid="uid://dwicj13gkptfj"]
+[gd_scene load_steps=26 format=3 uid="uid://dwicj13gkptfj"]
 
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://scenes/player.tscn" id="1_yu70o"]
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://scenes/enemy.tscn" id="3_ftov6"]
@@ -21,6 +21,7 @@
 [ext_resource type="Texture2D" uid="uid://dsebi8t76yden" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png" id="17_ab7p5"]
 [ext_resource type="Texture2D" uid="uid://cxxkpokh0efn4" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png" id="18_dd2id"]
 [ext_resource type="Texture2D" uid="uid://de8ny0p5lwrgb" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png" id="19_62h82"]
+[ext_resource type="PackedScene" uid="uid://dw4p41r1g4wjh" path="res://scenes/platform.tscn" id="20_vyo5t"]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_cw8wx"]
 animations = [{
@@ -39,7 +40,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_sigi7"]
@@ -59,7 +60,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [sub_resource type="SpriteFrames" id="SpriteFrames_8t7te"]
@@ -79,7 +80,7 @@ animations = [{
 }],
 "loop": true,
 "name": &"default",
-"speed": 5.0
+"speed": 10.0
 }]
 
 [node name="main" type="Node2D"]
@@ -105,46 +106,56 @@ z_index = -5
 position = Vector2(1749.4, 281.8)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_cw8wx")
+autoplay = "default"
+frame_progress = 0.349796
 
 [node name="LeftTree1" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(1365.4, 433.8)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_cw8wx")
+autoplay = "default"
+frame_progress = 0.998086
 
 [node name="Tree4" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(2449.4, 213.8)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_sigi7")
-frame_progress = 0.747499
+autoplay = "default"
+frame_progress = 0.972364
 
 [node name="Tree3" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(1450.4, 213.8)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_sigi7")
-frame_progress = 0.747499
+autoplay = "default"
+frame_progress = 0.0113015
 
 [node name="Tree1" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(667, 333)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_sigi7")
-frame_progress = 0.0780076
+autoplay = "default"
+frame_progress = 0.0380271
 
 [node name="Tree2" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(1128.4, 340.8)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_sigi7")
-frame_progress = 0.747499
+autoplay = "default"
+frame_progress = 0.806367
 
 [node name="RightTree" type="AnimatedSprite2D" parent="LevelIsla"]
 z_index = -5
 position = Vector2(475, 506)
 scale = Vector2(1.4, 1.4)
 sprite_frames = SubResource("SpriteFrames_8t7te")
+autoplay = "default"
+frame_progress = 0.954817
 
 [node name="cangrejo2" parent="LevelIsla" instance=ExtResource("3_ftov6")]
 position = Vector2(1206, 308)
@@ -162,6 +173,11 @@ position = Vector2(925, 277)
 
 [node name="red_bottle" parent="LevelIsla/Treasure" instance=ExtResource("5_i1m8k")]
 position = Vector2(1994, 529)
+
+[node name="Platform" parent="LevelIsla" instance=ExtResource("20_vyo5t")]
+z_index = -2
+position = Vector2(317, 491)
+scale = Vector2(2.5, 2.5)
 
 [node name="HUD" parent="." instance=ExtResource("6_a6pi8")]
 
