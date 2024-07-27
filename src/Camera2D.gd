@@ -8,4 +8,5 @@ func _ready():
 	position.x = _subject.position.x + offset.x
 
 func _process(_delta):
-	position.x = _subject.position.x + offset.x
+	if _subject:
+		position.x = _subject.position.x + offset.x

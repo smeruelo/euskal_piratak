@@ -1,5 +1,6 @@
-[gd_scene load_steps=27 format=3 uid="uid://dwicj13gkptfj"]
+[gd_scene load_steps=28 format=3 uid="uid://dwicj13gkptfj"]
 
+[ext_resource type="Script" path="res://src/main.gd" id="1_rqi8f"]
 [ext_resource type="PackedScene" uid="uid://bsacqdii0ff5l" path="res://scenes/player.tscn" id="1_yu70o"]
 [ext_resource type="PackedScene" uid="uid://c7p6ed6uvn2xr" path="res://scenes/enemy.tscn" id="3_ftov6"]
 [ext_resource type="PackedScene" uid="uid://mvebvw37hjw4" path="res://scenes/treasure/green_diamond.tscn" id="4_aylta"]
@@ -7,20 +8,20 @@
 [ext_resource type="Script" path="res://src/Camera2D.gd" id="5_4tilf"]
 [ext_resource type="PackedScene" uid="uid://0hfhsaqhfvk3" path="res://scenes/treasure/red_bottle.tscn" id="5_i1m8k"]
 [ext_resource type="PackedScene" uid="uid://dnwhia8dkbn15" path="res://scenes/background.tscn" id="5_qwh3e"]
-[ext_resource type="Texture2D" uid="uid://bqb7ckalvtu6e" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="5_rel2w"]
-[ext_resource type="Texture2D" uid="uid://b1jehq4f8skb8" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="6_7js5a"]
+[ext_resource type="Texture2D" uid="uid://btufpyx73r8vy" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 01.png" id="5_rel2w"]
+[ext_resource type="Texture2D" uid="uid://bmqyx1ysi37pe" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 02.png" id="6_7js5a"]
 [ext_resource type="PackedScene" uid="uid://bh5uid8opw16o" path="res://scenes/HUD.tscn" id="6_a6pi8"]
-[ext_resource type="Texture2D" uid="uid://bcusfg3ontth6" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png" id="6_tobxp"]
+[ext_resource type="Texture2D" uid="uid://cmjjrbm2ghgt5" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 01.png" id="6_tobxp"]
 [ext_resource type="PackedScene" uid="uid://dtbpx2vhn1p5h" path="res://scenes/water.tscn" id="7_16cbg"]
-[ext_resource type="Texture2D" uid="uid://dg7xroue02es2" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png" id="7_162xu"]
-[ext_resource type="Texture2D" uid="uid://w0oo3pucwoo3" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="7_l5ufg"]
-[ext_resource type="Texture2D" uid="uid://cv3v8cpsc1rk4" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png" id="8_aluad"]
-[ext_resource type="Texture2D" uid="uid://bbklwxptfbptf" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="8_xlnvx"]
-[ext_resource type="Texture2D" uid="uid://f6vv5f57w6ai" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png" id="9_8ttov"]
-[ext_resource type="Texture2D" uid="uid://bep718how12gu" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png" id="16_13qu2"]
-[ext_resource type="Texture2D" uid="uid://cflpewa40sm2q" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png" id="17_ab7p5"]
-[ext_resource type="Texture2D" uid="uid://bj7rivtwtnd1n" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png" id="18_dd2id"]
-[ext_resource type="Texture2D" uid="uid://cl53vfe0dtxgi" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png" id="19_62h82"]
+[ext_resource type="Texture2D" uid="uid://bu1i7h5hhd3ca" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 02.png" id="7_162xu"]
+[ext_resource type="Texture2D" uid="uid://bwtolhvn6olg3" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 03.png" id="7_l5ufg"]
+[ext_resource type="Texture2D" uid="uid://dq5m55jh6fho8" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 03.png" id="8_aluad"]
+[ext_resource type="Texture2D" uid="uid://b75oasvu3uk8t" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Left 04.png" id="8_xlnvx"]
+[ext_resource type="Texture2D" uid="uid://kns1y8gbcxnw" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Regular 04.png" id="9_8ttov"]
+[ext_resource type="Texture2D" uid="uid://cnpq8i2lw1p25" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 01.png" id="16_13qu2"]
+[ext_resource type="Texture2D" uid="uid://dsebi8t76yden" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 02.png" id="17_ab7p5"]
+[ext_resource type="Texture2D" uid="uid://cxxkpokh0efn4" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 03.png" id="18_dd2id"]
+[ext_resource type="Texture2D" uid="uid://de8ny0p5lwrgb" path="res://assets/Palm Tree Island/Sprites/Back Palm Trees/Back Palm Tree Right 04.png" id="19_62h82"]
 [ext_resource type="PackedScene" uid="uid://dw4p41r1g4wjh" path="res://scenes/platform.tscn" id="20_vyo5t"]
 [ext_resource type="PackedScene" uid="uid://d1l7f7pecr8qg" path="res://scenes/boat.tscn" id="21_tlq2l"]
 
@@ -85,10 +86,12 @@ animations = [{
 }]
 
 [node name="main" type="Node2D"]
+script = ExtResource("1_rqi8f")
 metadata/_edit_horizontal_guides_ = [600.0, 303.0, 560.0]
 
 [node name="Player" parent="." instance=ExtResource("1_yu70o")]
 position = Vector2(402, 229)
+collision_mask = 9
 
 [node name="Camera" type="Camera2D" parent="." node_paths=PackedStringArray("_subject")]
 position = Vector2(401, 302)
@@ -182,6 +185,7 @@ scale = Vector2(2.5, 2.5)
 
 [node name="Boat" parent="LevelIsla" instance=ExtResource("21_tlq2l")]
 position = Vector2(3018, 492)
+collision_mask = 1
 
 [node name="HUD" parent="." instance=ExtResource("6_a6pi8")]
 
@@ -197,3 +201,4 @@ position = Vector2(-1, 533)
 [connection signal="left_entered" from="LevelIsla/cangrejo1" to="Player" method="_on_enemy_left_entered"]
 [connection signal="right_entered" from="LevelIsla/cangrejo1" to="Player" method="_on_enemy_right_entered"]
 [connection signal="top_entered" from="LevelIsla/cangrejo1" to="Player" method="_on_enemy_top_entered"]
+[connection signal="boarded" from="LevelIsla/Boat" to="." method="_on_boat_boarded"]
