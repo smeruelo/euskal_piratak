@@ -19,6 +19,7 @@ var state = THREE
 func _ready():
 	get_node("../HUD/boss_bar").visible = true
 	get_node("../HUD/boss_bar/TextureProgressBar").max_value = MAX_BOSS_HEALTH
+	get_node("../HUD/boss_bar/TextureProgressBar").value = boss_health
 
 func shoot(shooter):
 	var b = bullet_scene.instantiate()
