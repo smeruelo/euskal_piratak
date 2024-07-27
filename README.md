@@ -1,5 +1,11 @@
 # Euskal Piratak
 
+# Play
+```bash
+cd euskal_piratak
+godot project.binary
+```
+
 # Crew
 Made by *w0pr*
 Code: [lothwen](https://github.com/lothwen), [tekess](https://github.com/smeruelo), [ziberpunk](https://github.com/abeaumont)
