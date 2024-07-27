@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://bwe6kv433dihw"]
 
-[ext_resource type="Script" path="res://scenes/final_level/enemy_bullet.gd" id="1_iiaxh"]
-[ext_resource type="Texture2D" uid="uid://cjcr52vtmgb7r" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="2_cjjqp"]
+[ext_resource type="Script" path="res://src/final_level/enemy_bullet.gd" id="1_iiaxh"]
+[ext_resource type="Texture2D" uid="uid://brv7wt4oqr528" path="res://assets/Shooter Traps/Sprites/Totems/Wood Spike/Idle/1.png" id="2_cjjqp"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_5lfi4"]
 
@@ -21,5 +21,4 @@ scale = Vector2(1.5, 1.5)
 shape = SubResource("CapsuleShape2D_5lfi4")
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
-[connection signal="screen_entered" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_entered"]
 [connection signal="screen_exited" from="VisibleOnScreenNotifier2D" to="." method="_on_visible_on_screen_notifier_2d_screen_exited"]

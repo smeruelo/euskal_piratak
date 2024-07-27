@@ -8,6 +8,9 @@ var bullet_scene = preload("res://scenes/final_level/enemy_bullet.tscn")
 
 var boss_health = MAX_BOSS_HEALTH
 
+enum {THREE, TWO, ONE, ZERO}
+var state = THREE
+
 #signal head_entered(Boss)
 #signal mid_entered(Boss)
 #signal ground_entered(Boss)
@@ -15,11 +18,6 @@ var boss_health = MAX_BOSS_HEALTH
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	get_node("../HUD/boss_bar").visible = true
-
-
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-func _process(delta):
-	pass
 
 func shoot(shooter):
 	var b = bullet_scene.instantiate()
@@ -34,14 +32,24 @@ func hit():
 	print("Boss health: %s (-%s)" % [boss_health, damage])
 	boss_health_bar.value = boss_health
 	
-	if boss_health <= 2 * (MAX_BOSS_HEALTH / 3):
-		#get_node("ground_level").visible = false
-		get_node("ground_level/CollisionShape2D").disabled = true
-		get_node("ground_level/Area_ground/CollisionShape2D").disabled = true
-		$Timer_attack_ground.stop()
-		
-		
-	
+	match state:
+		THREE:
+			if boss_health <= 2 * (MAX_BOSS_HEALTH / 3):
+				$Timer_attack_ground.stop()
+				$ground_level.queue_free()
+				state = TWO
+		TWO:
+			if boss_health <= MAX_BOSS_HEALTH / 3:
+				$Timer_attack_mid.stop()
+				$mid_level.queue_free()
+				state = ONE
+		ONE:
+			if boss_health < 0:
+				$Timer_attack_head.stop()
+				$head_level.queue_free()
+				state = ZERO
+		ZERO:
+			print("You Win")
 	
 func _on_timer_attack_head_timeout():
 	get_node("head_level/AnimatedSprite2D_head").play("attack")
@@ -56,13 +64,11 @@ func _on_timer_attack_mid_timeout():
 	await get_tree().create_timer(0.7).timeout
 	shoot(get_node("mid_level/CollisionShape2D"))
 
-
 func _on_timer_attack_ground_timeout():
 	get_node("ground_level/AnimatedSprite2D_ground").play("attack")
 	$Timer_attack_ground.start(randi_range(1,DIFFICULTY))
 	await get_tree().create_timer(0.7).timeout
 	shoot(get_node("ground_level/CollisionShape2D"))
-
 
 func _on_animated_sprite_2d_head_animation_looped():
 	get_node("head_level/AnimatedSprite2D_head").play("idle")
