@@ -18,9 +18,9 @@ outline_size = 8
 outline_color = Color(0, 0.372549, 0, 1)
 
 [sub_resource type="LabelSettings" id="LabelSettings_sdloj"]
-font_size = 25
+font_size = 20
 font_color = Color(0, 0, 0, 1)
-outline_size = 3
+outline_size = 2
 outline_color = Color(0, 0.372549, 0, 1)
 
 [node name="HUD" type="CanvasLayer"]
@@ -139,10 +139,10 @@ anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_left = -43.5
-offset_top = -46.5
-offset_right = 43.5
-offset_bottom = 46.5
+offset_left = -211.0
+offset_top = -138.0
+offset_right = 233.0
+offset_bottom = 446.0
 grow_horizontal = 2
 grow_vertical = 2
 
@@ -165,6 +165,8 @@ text = "Exit
 [node name="credits" type="Label" parent="Game_Over/VBoxContainer"]
 layout_mode = 2
 text = "
+
+
 
 
 made by w0pr
