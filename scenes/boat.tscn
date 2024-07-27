@@ -1,0 +1,133 @@
+[gd_scene load_steps=22 format=3 uid="uid://d1l7f7pecr8qg"]
+
+[ext_resource type="Script" path="res://src/boat.gd" id="1_dhknk"]
+[ext_resource type="Texture2D" uid="uid://bvim53jcccn2u" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/1.png" id="1_hwy14"]
+[ext_resource type="Texture2D" uid="uid://bd48iqebrii3b" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/2.png" id="2_2q16j"]
+[ext_resource type="Texture2D" uid="uid://b5xx3b6ptrhcq" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/3.png" id="3_7osxt"]
+[ext_resource type="Texture2D" uid="uid://bydemi2xjf6de" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/4.png" id="4_jmf8n"]
+[ext_resource type="Texture2D" uid="uid://dl7fqu16ehtr4" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/5.png" id="5_17n02"]
+[ext_resource type="Texture2D" uid="uid://d3ix46bnogcdy" path="res://assets/Merchant Ship/Sprites/Ship/Ship/Idle/6.png" id="6_6p6bl"]
+[ext_resource type="Texture2D" uid="uid://jry1wkmc7plh" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/1.png" id="7_f0p86"]
+[ext_resource type="Texture2D" uid="uid://c16nu3161j2xt" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/2.png" id="8_wgf70"]
+[ext_resource type="Texture2D" uid="uid://c00akjr1sl215" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/3.png" id="9_liwom"]
+[ext_resource type="Texture2D" uid="uid://d02t428prankh" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/4.png" id="10_6s8dg"]
+[ext_resource type="Texture2D" uid="uid://c6syya1a4f76h" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/5.png" id="11_77axa"]
+[ext_resource type="Texture2D" uid="uid://dg5yco4rvrej5" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/6.png" id="12_lgmb5"]
+[ext_resource type="Texture2D" uid="uid://owhy218elicp" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/7.png" id="13_berdv"]
+[ext_resource type="Texture2D" uid="uid://d0gj71ldgarei" path="res://assets/Merchant Ship/Sprites/Ship/Sail/No Wind/8.png" id="14_3bu7h"]
+[ext_resource type="Texture2D" uid="uid://bo26ys0dx6i6l" path="res://assets/Merchant Ship/Sprites/Ship/Anchor/1.png" id="15_olstr"]
+[ext_resource type="Texture2D" uid="uid://p51hj7ehxmda" path="res://assets/Merchant Ship/Sprites/Ship/Anchor/2.png" id="16_6na58"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_0c7ve"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_hwy14")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_2q16j")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_7osxt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_jmf8n")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_17n02")
+}, {
+"duration": 1.0,
+"texture": ExtResource("6_6p6bl")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_smslf"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("7_f0p86")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_wgf70")
+}, {
+"duration": 1.0,
+"texture": ExtResource("9_liwom")
+}, {
+"duration": 1.0,
+"texture": ExtResource("10_6s8dg")
+}, {
+"duration": 1.0,
+"texture": ExtResource("11_77axa")
+}, {
+"duration": 1.0,
+"texture": ExtResource("12_lgmb5")
+}, {
+"duration": 1.0,
+"texture": ExtResource("13_berdv")
+}, {
+"duration": 1.0,
+"texture": ExtResource("14_3bu7h")
+}],
+"loop": true,
+"name": &"idle",
+"speed": 10.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_1lv68"]
+size = Vector2(78, 6)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_x5sew"]
+size = Vector2(77.2, 20.8)
+
+[node name="Boat" type="CharacterBody2D"]
+scale = Vector2(2.5, 2.5)
+collision_layer = 8
+collision_mask = 2
+motion_mode = 1
+script = ExtResource("1_dhknk")
+
+[node name="hull" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_0c7ve")
+animation = &"idle"
+autoplay = "idle"
+frame_progress = 0.66705
+
+[node name="sail" type="AnimatedSprite2D" parent="."]
+position = Vector2(0, -1)
+sprite_frames = SubResource("SpriteFrames_smslf")
+animation = &"idle"
+autoplay = "idle"
+frame = 1
+frame_progress = 0.673582
+offset = Vector2(0, -35)
+
+[node name="anchor" type="Sprite2D" parent="."]
+position = Vector2(0, 17)
+texture = ExtResource("15_olstr")
+offset = Vector2(-22, 9)
+
+[node name="chain" type="Sprite2D" parent="."]
+texture = ExtResource("16_6na58")
+offset = Vector2(-22, 0)
+
+[node name="chain2" type="Sprite2D" parent="."]
+texture = ExtResource("16_6na58")
+offset = Vector2(-22, 11)
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 8
+collision_mask = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+visible = false
+position = Vector2(0, -9.2)
+shape = SubResource("RectangleShape2D_1lv68")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.600003, -0.4)
+shape = SubResource("RectangleShape2D_x5sew")
+
+[connection signal="body_entered" from="Area2D" to="." method="_on_area_2d_body_entered"]

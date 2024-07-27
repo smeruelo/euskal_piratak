@@ -19,16 +19,23 @@ var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
+var is_navigating = false
+
 func _process(_delta):
 	if is_dead:
 		get_tree().reload_current_scene()
 
 func _physics_process(delta):
-	
+	if is_navigating:
+		velocity.x = 0
+		set_motion_mode(1)
+		move_and_slide()
+		return
+
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		
+
 	# Handle Jump and double jump
 	if Input.is_action_just_pressed("jump"):
 		if is_on_floor():
@@ -36,7 +43,7 @@ func _physics_process(delta):
 		elif hud.get_stamina() > STAMINA_COST:
 			velocity.y = JUMP_VELOCITY
 			hud.increase_stamina(-1 * STAMINA_COST)
-			
+
 	# Get the input direction and handle the movement/deceleration.
 	# As good practice, you should replace UI actions with custom gameplay actions.
 	var direction = Input.get_axis("move_left", "move_right")
@@ -148,8 +155,10 @@ func die():
 	print("died")
 	is_dead = true
 
-
 func _on_timer_timeout():
 	hud.increase_stamina(STAMINA_RECOVERY)
 	hud.increase_health(HEALTH_RECOVERY)
 
+
+func _on_boat_boarded(body):
+	is_navigating = true
