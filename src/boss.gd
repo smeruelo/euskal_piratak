@@ -6,7 +6,7 @@ const MAX_BOSS_HEALTH = 500
 
 var bullet_scene = preload("res://scenes/final_level/enemy_bullet.tscn")
 
-var boss_health = MAX_BOSS_HEALTH
+@export var boss_health = MAX_BOSS_HEALTH
 
 enum {THREE, TWO, ONE, ZERO}
 var state = THREE
@@ -33,7 +33,7 @@ func hit():
 	var boss_health_bar = get_node("../HUD/boss_bar/TextureProgressBar")	
 	var damage = round(PLAYER_BASE_DAMAGE * (randf() + 1))
 	
-	boss_health = boss_health - damage
+	boss_health -= damage
 	print("Boss health: %s (-%s)" % [boss_health, damage])
 	boss_health_bar.value = boss_health
 	

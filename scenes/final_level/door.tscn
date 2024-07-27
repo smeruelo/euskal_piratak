@@ -40,3 +40,4 @@ sprite_frames = SubResource("SpriteFrames_xkj3t")
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 11)
 shape = SubResource("RectangleShape2D_8lpx0")
+debug_color = Color(0.963857, 0, 0.496227, 0.42)

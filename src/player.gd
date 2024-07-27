@@ -22,6 +22,8 @@ var attacks_array = ["attack_1", "attack_2", "attack_3"]
 var current_attack_anim
 
 var is_navigating = false
+var is_animated = false
+var is_stopped = false
 
 func init():
 	is_attacking = false
@@ -35,6 +37,15 @@ func init():
 #		get_tree().reload_current_scene()
 
 func _physics_process(delta):
+	if is_animated:
+		if is_stopped:
+			$AnimatedSprite2D.play("idle")
+		else:
+			$AnimatedSprite2D.play("walk")
+			velocity.x = SPEED
+			move_and_slide()
+		return
+
 	if is_navigating:
 		velocity.x = 0
 		set_motion_mode(1)
@@ -166,9 +177,15 @@ func die():
 	dead.emit(self)
 
 func _on_timer_timeout():
+	if hud == null:
+		return
 	hud.increase_stamina(STAMINA_RECOVERY)
 	hud.increase_health(HEALTH_RECOVERY)
 
 
 func _on_boat_boarded(body):
 	is_navigating = true
+
+func _on_chest_body_entered(body):
+	if body.name == "Player":
+		is_stopped = true

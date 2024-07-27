@@ -5,6 +5,5 @@ func _ready():
 
 func _on_boss_died():
 	$AnimatedSprite2D.play()
-
-func _on_animated_sprite_2d_animation_finished():
+	await $AnimatedSprite2D.animation_finished
 	$CollisionShape2D.disabled = false	
