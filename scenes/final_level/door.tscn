@@ -1,0 +1,42 @@
+[gd_scene load_steps=8 format=3 uid="uid://g2x5xfewd0ai"]
+
+[ext_resource type="Texture2D" uid="uid://cq4kar6gxmgf3" path="res://assets/Pirate Ship/Sprites/Decorations/Door/Opening/01.png" id="1_pmkjd"]
+[ext_resource type="Texture2D" uid="uid://b0vkn6tn6k57m" path="res://assets/Pirate Ship/Sprites/Decorations/Door/Opening/02.png" id="2_q1xcf"]
+[ext_resource type="Texture2D" uid="uid://c1e45dbncrph" path="res://assets/Pirate Ship/Sprites/Decorations/Door/Opening/03.png" id="3_aetel"]
+[ext_resource type="Texture2D" uid="uid://c5l0hnt4r3fsf" path="res://assets/Pirate Ship/Sprites/Decorations/Door/Opening/04.png" id="4_3lowu"]
+[ext_resource type="Texture2D" uid="uid://eu08q4d68x1m" path="res://assets/Pirate Ship/Sprites/Decorations/Door/Opening/05.png" id="5_tdp7p"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_xkj3t"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("1_pmkjd")
+}, {
+"duration": 1.0,
+"texture": ExtResource("2_q1xcf")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_aetel")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_3lowu")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_tdp7p")
+}],
+"loop": false,
+"name": &"default",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_8lpx0"]
+size = Vector2(18, 42)
+
+[node name="Door" type="Area2D"]
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+sprite_frames = SubResource("SpriteFrames_xkj3t")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(1, 11)
+shape = SubResource("RectangleShape2D_8lpx0")

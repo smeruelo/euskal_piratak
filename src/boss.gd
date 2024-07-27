@@ -11,6 +11,8 @@ var boss_health = MAX_BOSS_HEALTH
 enum {THREE, TWO, ONE, ZERO}
 var state = THREE
 
+signal died
+
 #signal head_entered(Boss)
 #signal mid_entered(Boss)
 #signal ground_entered(Boss)
@@ -22,9 +24,10 @@ func _ready():
 	get_node("../HUD/boss_bar/TextureProgressBar").value = boss_health
 
 func shoot(shooter):
-	var b = bullet_scene.instantiate()
-	get_tree().root.add_child(b)
-	b.start(shooter.global_position)
+	if shooter:
+		var b = bullet_scene.instantiate()
+		get_tree().root.add_child(b)
+		b.start(shooter.global_position)
 	
 func hit():
 	var boss_health_bar = get_node("../HUD/boss_bar/TextureProgressBar")	
@@ -49,9 +52,8 @@ func hit():
 			if boss_health < 0:
 				$Timer_attack_head.stop()
 				$head_level.queue_free()
-				state = ZERO
-		ZERO:
-			print("You Win")
+				died.emit()
+				queue_free()
 	
 func _on_timer_attack_head_timeout():
 	get_node("head_level/AnimatedSprite2D_head").play("attack")
