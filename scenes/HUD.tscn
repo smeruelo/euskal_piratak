@@ -50,6 +50,7 @@ scale = Vector2(0.7, 0.9385)
 texture = ExtResource("2_i2wjg")
 
 [node name="boss_bar" type="HBoxContainer" parent="."]
+visible = false
 offset_left = 137.0
 offset_top = 139.0
 offset_right = 329.0
